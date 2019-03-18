@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    container_name: db
+    image: postgres
+    environment:
+      - POSTGRES_USER=<database-username>       # Define Custom User
+      - POSTGRES_PASSWORD=<database-password>       # Define Custom PW
+      - POSTGRES_DB=<database-name>     # Define custom DB
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+  web:
+    build: .
+    command: bash -c  "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    container_name: django_api
+    volumes:
+      - .:/django_api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    restart: on-failure

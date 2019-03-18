@@ -1,0 +1,1297 @@
+[
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "480",
+        "height": "854"
+    },
+    "platform": "Android",
+    "screen_dims": "4.5in 2.200d73.9in",
+    "aspect": "16:9",
+    "device": "Android One",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "320",
+        "height": "569"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "320",
+        "height": "320"
+    },
+    "platform": "Android",
+    "screen_dims": "1.6in 1.200d71.2in",
+    "aspect": "1:1",
+    "device": "Asus Zen Watch",
+    "type": "watch",
+    "dp":
+    {
+        "width": "213",
+        "height": "213"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "1600",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "8.4in 4.500d77.1in",
+    "aspect": "16:10",
+    "device": "Dell Venue 8",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "800",
+        "height": "1280"
+    }
+},
+{
+    "density": "2.6xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.0in 2.500d74.4in",
+    "aspect": "16:9",
+    "device": "Google Pixel",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "411",
+        "height": "731"
+    }
+},
+{
+    "density": "3.5xxxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "5.5in 2.700d74.8in",
+    "aspect": "16:9",
+    "device": "Google Pixel XL",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "411",
+        "height": "731"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.0in 2.500d74.4in",
+    "aspect": "16:9",
+    "device": "HTC One M8",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.0in 2.500d74.4in",
+    "aspect": "16:9",
+    "device": "HTC One M9",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "280",
+        "height": "280"
+    },
+    "platform": "Android",
+    "screen_dims": "1.7in 1.200d71.2in",
+    "aspect": "1:1",
+    "device": "LG G Watch",
+    "type": "watch",
+    "dp":
+    {
+        "width": "187",
+        "height": "187"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "320",
+        "height": "320"
+    },
+    "platform": "Android",
+    "screen_dims": "1.8in 1.300d71.3in",
+    "aspect": "1:1",
+    "device": "LG G Watch R",
+    "type": "watch",
+    "dp":
+    {
+        "width": "213",
+        "height": "213"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.2in 2.500d74.5in",
+    "aspect": "16:9",
+    "device": "LG G2",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "5.5in 2.700d74.8in",
+    "aspect": "16:9",
+    "device": "LG G3",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "480",
+        "height": "853"
+    }
+},
+{
+    "density": "1.3tvdpi",
+    "px":
+    {
+        "width": "320",
+        "height": "290"
+    },
+    "platform": "Android",
+    "screen_dims": "1.6in 1.600d71.4in",
+    "aspect": "32:29",
+    "device": "Moto 360",
+    "type": "watch",
+    "dp":
+    {
+        "width": "241",
+        "height": "218"
+    }
+},
+{
+    "density": "1.3tvdpi",
+    "px":
+    {
+        "width": "320",
+        "height": "325"
+    },
+    "platform": "Android",
+    "screen_dims": "1.4in 1.200d71.2in",
+    "aspect": "65:64",
+    "device": "Moto 360 v2 42mm",
+    "type": "watch",
+    "dp":
+    {
+        "width": "241",
+        "height": "244"
+    }
+},
+{
+    "density": "1.3tvdpi",
+    "px":
+    {
+        "width": "320",
+        "height": "330"
+    },
+    "platform": "Android",
+    "screen_dims": "1.6in 1.400d71.4in",
+    "aspect": "33:32",
+    "device": "Moto 360 v2 46mm",
+    "type": "watch",
+    "dp":
+    {
+        "width": "241",
+        "height": "248"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "720",
+        "height": "1280"
+    },
+    "platform": "Android",
+    "screen_dims": "4.5in 2.200d73.9in",
+    "aspect": "16:9",
+    "device": "Moto G",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "720",
+        "height": "1280"
+    },
+    "platform": "Android",
+    "screen_dims": "4.7in 2.300d74.1in",
+    "aspect": "16:9",
+    "device": "Moto X",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.2in 2.500d74.5in",
+    "aspect": "16:9",
+    "device": "Moto X (2nd Gen)",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "2560",
+        "height": "1600"
+    },
+    "platform": "Android",
+    "screen_dims": "10.1in 8.600d75.4in",
+    "aspect": "16:10",
+    "device": "Nexus 10",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "1280",
+        "height": "800"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "768",
+        "height": "1280"
+    },
+    "platform": "Android",
+    "screen_dims": "4.7in 3.200d74.0in",
+    "aspect": "5:3",
+    "device": "Nexus 4",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "384",
+        "height": "640"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.0in 2.400d74.3in",
+    "aspect": "16:9",
+    "device": "Nexus 5",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "2.6xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.2in 2.500d74.5in",
+    "aspect": "16:9",
+    "device": "Nexus 5X",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "411",
+        "height": "731"
+    }
+},
+{
+    "density": "3.5xxxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "6.0in 2.900d75.2in",
+    "aspect": "16:9",
+    "device": "Nexus 6",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "411",
+        "height": "731"
+    }
+},
+{
+    "density": "3.5xxxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "5.7in 2.800d75.0in",
+    "aspect": "16:9",
+    "device": "Nexus 6P",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "411",
+        "height": "731"
+    }
+},
+{
+    "density": "1.3tvdpi",
+    "px":
+    {
+        "width": "800",
+        "height": "1280"
+    },
+    "platform": "Android",
+    "screen_dims": "7.0in 3.700d75.9in",
+    "aspect": "16:10",
+    "device": "Nexus 7 ('12)",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "600",
+        "height": "960"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "1200",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "7.0in 3.700d76.0in",
+    "aspect": "16:10",
+    "device": "Nexus 7 ('13)",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "600",
+        "height": "960"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "2048",
+        "height": "1536"
+    },
+    "platform": "Android",
+    "screen_dims": "8.9in 7.100d75.3in",
+    "aspect": "4:3",
+    "device": "Nexus 9",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "1024",
+        "height": "768"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "5.7in 2.800d75.0in",
+    "aspect": "16:9",
+    "device": "Samsung Galaxy Note 4",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "480",
+        "height": "853"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.1in 2.900d75.6in",
+    "aspect": "16:9",
+    "device": "Samsung Galaxy S5",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "4.0xxxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "5.1in 2.500d74.4in",
+    "aspect": "16:9",
+    "device": "Samsung Galaxy S6",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "4.0xxxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "5.1in 2.500d74.4in",
+    "aspect": "16:9",
+    "device": "Samsung Galaxy S7",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "4.0xxxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2560"
+    },
+    "platform": "Android",
+    "screen_dims": "5.5in 2.700d74.8in",
+    "aspect": "16:9",
+    "device": "Samsung Galaxy S7 Edge",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "4.0xxxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2960"
+    },
+    "platform": "Android",
+    "screen_dims": "5.8in 2.500d75.2in",
+    "aspect": "18.5:9",
+    "device": "Samsung Galaxy S8",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "740"
+    }
+},
+{
+    "density": "4.0xxxhdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "2960"
+    },
+    "platform": "Android",
+    "screen_dims": "6.2in 2.700d75.6in",
+    "aspect": "18.5:9",
+    "device": "Samsung Galaxy S8+",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "740"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "800",
+        "height": "1280"
+    },
+    "platform": "Android",
+    "screen_dims": "10.1in 5.400d78.6in",
+    "aspect": "16:10",
+    "device": "Samsung Galaxy Tab 10",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "800",
+        "height": "1280"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "320",
+        "height": "320"
+    },
+    "platform": "Android",
+    "screen_dims": "1.7in 1.200d71.2in",
+    "aspect": "1:1",
+    "device": "Samsung Gear Live",
+    "type": "watch",
+    "dp":
+    {
+        "width": "213",
+        "height": "213"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "320",
+        "height": "320"
+    },
+    "platform": "Android",
+    "screen_dims": "1.6in 1.100d71.1in",
+    "aspect": "1:1",
+    "device": "Sony Smartwatch 3",
+    "type": "watch",
+    "dp":
+    {
+        "width": "213",
+        "height": "213"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.5in 2.700d74.8in",
+    "aspect": "16:9",
+    "device": "Sony Xperia C4",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "540",
+        "height": "960"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "6.4in 3.100d75.6in",
+    "aspect": "16:9",
+    "device": "Sony Xperia Z Ultra",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "540",
+        "height": "960"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "720",
+        "height": "1280"
+    },
+    "platform": "Android",
+    "screen_dims": "4.3in 2.100d73.7in",
+    "aspect": "16:9",
+    "device": "Sony Xperia Z1 Compact",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "3.0xxhdpi",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "Android",
+    "screen_dims": "5.2in 2.500d74.5in",
+    "aspect": "16:9",
+    "device": "Sony Xperia Z2/Z3",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "720",
+        "height": "1280"
+    },
+    "platform": "Android",
+    "screen_dims": "4.6in 2.300d74.0in",
+    "aspect": "16:9",
+    "device": "Sony Xperia Z3 Compact",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "360",
+        "height": "640"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "1920",
+        "height": "1200"
+    },
+    "platform": "Android",
+    "screen_dims": "8.0in 6.800d74.2in",
+    "aspect": "16:10",
+    "device": "Sony Xperia Z3 Tablet",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "960",
+        "height": "600"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "2560",
+        "height": "1600"
+    },
+    "platform": "Android",
+    "screen_dims": "10.1in 8.600d75.4in",
+    "aspect": "16:10",
+    "device": "Sony Xperia Z4 Tablet",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "1280",
+        "height": "800"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "1366",
+        "height": "768"
+    },
+    "platform": "Chrome",
+    "screen_dims": "11.6in 10.100d75.7in",
+    "aspect": "16:9",
+    "device": "Chromebook 11",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1366",
+        "height": "768"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "2560",
+        "height": "1700"
+    },
+    "platform": "Chrome",
+    "screen_dims": "12.9in 10.700d77.1in",
+    "aspect": "3:2",
+    "device": "Chromebook Pixel",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1280",
+        "height": "850"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "2560",
+        "height": "1600"
+    },
+    "platform": "Chrome",
+    "screen_dims": "30.0in 25.400d715.9in",
+    "aspect": "16:10",
+    "device": "Chromebox 30",
+    "type": "desktop_mac",
+    "dp":
+    {
+        "width": "2560",
+        "height": "1600"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "272",
+        "height": "340"
+    },
+    "platform": "iOS",
+    "screen_dims": "1.5in 0.900d71.2in",
+    "aspect": "5:4",
+    "device": "Apple Watch 38mm",
+    "type": "watch",
+    "dp":
+    {
+        "width": "136",
+        "height": "170"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "312",
+        "height": "390"
+    },
+    "platform": "iOS",
+    "screen_dims": "1.7in 1.000d71.3in",
+    "aspect": "5:4",
+    "device": "Apple Watch 42mm",
+    "type": "watch",
+    "dp":
+    {
+        "width": "156",
+        "height": "195"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "768",
+        "height": "1024"
+    },
+    "platform": "iOS",
+    "screen_dims": "9.7in 5.800d77.8in",
+    "aspect": "4:3",
+    "device": "iPad",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "768",
+        "height": "1024"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "768",
+        "height": "1024"
+    },
+    "platform": "iOS",
+    "screen_dims": "7.9in 4.700d76.3in",
+    "aspect": "4:3",
+    "device": "iPad Mini",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "768",
+        "height": "1024"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "1536",
+        "height": "2048"
+    },
+    "platform": "iOS",
+    "screen_dims": "7.9in 4.700d76.3in",
+    "aspect": "4:3",
+    "device": "iPad Mini Retina",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "768",
+        "height": "1024"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "2732",
+        "height": "2048"
+    },
+    "platform": "iOS",
+    "screen_dims": "12.9in 10.300d77.7in",
+    "aspect": "4:3",
+    "device": "iPad Pro",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "1366",
+        "height": "1024"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "1536",
+        "height": "2048"
+    },
+    "platform": "iOS",
+    "screen_dims": "9.7in 5.800d77.8in",
+    "aspect": "4:3",
+    "device": "iPad Retina",
+    "type": "tablet_android",
+    "dp":
+    {
+        "width": "768",
+        "height": "1024"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "320",
+        "height": "480"
+    },
+    "platform": "iOS",
+    "screen_dims": "3.5in 1.900d72.9in",
+    "aspect": "3:2",
+    "device": "iPhone",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "320",
+        "height": "480"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "640",
+        "height": "960"
+    },
+    "platform": "iOS",
+    "screen_dims": "3.5in 2.000d72.9in",
+    "aspect": "3:2",
+    "device": "iPhone 4",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "320",
+        "height": "480"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "640",
+        "height": "1136"
+    },
+    "platform": "iOS",
+    "screen_dims": "4.0in 2.000d73.5in",
+    "aspect": "16:9",
+    "device": "iPhone 5",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "320",
+        "height": "568"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "750",
+        "height": "1334"
+    },
+    "platform": "iOS",
+    "screen_dims": "4.7in 2.300d74.1in",
+    "aspect": "16:9",
+    "device": "iPhone 6",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "375",
+        "height": "667"
+    }
+},
+{
+    "density": "3.0xxhdpi(115.00%)",
+    "px":
+    {
+        "width": "1080",
+        "height": "1920"
+    },
+    "platform": "iOS",
+    "screen_dims": "5.5in 2.700d74.8in",
+    "aspect": "16:9",
+    "device": "iPhone 6 Plus",
+    "type": "phone_android",
+    "dp":
+    {
+        "width": "414",
+        "height": "736"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "2560",
+        "height": "1440"
+    },
+    "platform": "OS X",
+    "screen_dims": "27.0in 23.500d713.2in",
+    "aspect": "16:9",
+    "device": "iMac 27",
+    "type": "desktop_mac",
+    "dp":
+    {
+        "width": "2560",
+        "height": "1440"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "5120",
+        "height": "2880"
+    },
+    "platform": "OS X",
+    "screen_dims": "27.0in 23.500d713.2in",
+    "aspect": "16:9",
+    "device": "iMac 5K",
+    "type": "desktop_mac",
+    "dp":
+    {
+        "width": "2560",
+        "height": "1440"
+    }
+},
+{
+    "density": "2.0xhdpi(111.11%)",
+    "px":
+    {
+        "width": "2304",
+        "height": "1440"
+    },
+    "platform": "OS X",
+    "screen_dims": "12.0in 10.200d76.4in",
+    "aspect": "16:10",
+    "device": "MacBook 12",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1280",
+        "height": "800"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "1366",
+        "height": "768"
+    },
+    "platform": "OS X",
+    "screen_dims": "11.6in 10.100d75.7in",
+    "aspect": "16:9",
+    "device": "MacBook Air 11",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1366",
+        "height": "768"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "1440",
+        "height": "900"
+    },
+    "platform": "OS X",
+    "screen_dims": "13.3in 11.300d77.0in",
+    "aspect": "16:10",
+    "device": "MacBook Air 13",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1440",
+        "height": "900"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "2560",
+        "height": "1600"
+    },
+    "platform": "OS X",
+    "screen_dims": "13.3in 11.300d77.0in",
+    "aspect": "16:10",
+    "device": "MacBook Pro 13",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1280",
+        "height": "800"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "2880",
+        "height": "1800"
+    },
+    "platform": "OS X",
+    "screen_dims": "15.4in 13.100d78.2in",
+    "aspect": "16:10",
+    "device": "MacBook Pro 15",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1440",
+        "height": "900"
+    }
+},
+{
+    "density": "1.0mdpi",
+    "px":
+    {
+        "width": "1366",
+        "height": "768"
+    },
+    "platform": "Windows",
+    "screen_dims": "10.6in 9.200d75.2in",
+    "aspect": "16:9",
+    "device": "Surface",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1366",
+        "height": "768"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "1920",
+        "height": "1080"
+    },
+    "platform": "Windows",
+    "screen_dims": "10.6in 9.200d75.2in",
+    "aspect": "16:9",
+    "device": "Surface 2",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1280",
+        "height": "720"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "1920",
+        "height": "1080"
+    },
+    "platform": "Windows",
+    "screen_dims": "10.8in 9.400d75.3in",
+    "aspect": "16:9",
+    "device": "Surface 3",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1280",
+        "height": "720"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "3000",
+        "height": "2000"
+    },
+    "platform": "Windows",
+    "screen_dims": "13.5in 11.200d77.5in",
+    "aspect": "3:2",
+    "device": "Surface Book",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1500",
+        "height": "1000"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "1920",
+        "height": "1080"
+    },
+    "platform": "Windows",
+    "screen_dims": "10.6in 9.200d75.2in",
+    "aspect": "16:9",
+    "device": "Surface Pro",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1280",
+        "height": "720"
+    }
+},
+{
+    "density": "1.5hdpi",
+    "px":
+    {
+        "width": "2160",
+        "height": "1440"
+    },
+    "platform": "Windows",
+    "screen_dims": "12.0in 10.000d76.7in",
+    "aspect": "3:2",
+    "device": "Surface Pro 3",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1440",
+        "height": "960"
+    }
+},
+{
+    "density": "2.0xhdpi",
+    "px":
+    {
+        "width": "2736",
+        "height": "1824"
+    },
+    "platform": "Windows",
+    "screen_dims": "12.4in 10.300d76.9in",
+    "aspect": "3:2",
+    "device": "Surface Pro 4",
+    "type": "laptop",
+    "dp":
+    {
+        "width": "1368",
+        "height": "912"
+    }
+}]

@@ -1,0 +1,7 @@
+creds.json
+credentials.json
+node_modules/
+.env
+*.tfstate
+.terraform
+

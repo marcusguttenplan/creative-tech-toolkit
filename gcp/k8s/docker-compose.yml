@@ -1,0 +1,128 @@
+version: '3.2'
+
+services:
+  ## Build node server Container
+  api-node:
+    build: ./api-node
+    restart: always
+    tty: true
+    environment:
+      - 'MESSAGE=no. 1'
+    ports:
+        - "8000:8000"
+    depends_on:
+        - redis
+
+  ## Build Rails Container
+  api-rails:
+    build: ./api-rails
+    restart: always
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    environment:
+      PG_PASSWORD: foobarbat
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+
+  ## Build Flask Container
+  api-flask:
+      build: ./api-flask
+      restart: always
+      ports:
+          - "9000:9000"
+
+  ## Build Java Container
+  api-java:
+      build: ./api-java
+      restart: always
+      ports:
+        - '8080:8080'
+
+
+  # ## Build Go Mailer
+  smtp-go:
+      build: ./smtp-go
+      restart: always
+      ports:
+          - '6060:6060'
+      environment:
+          SMTP_USER: 'lorem'
+          SMTP_PASS: 'foobarbat'
+          SMTP_DOMAIN: 'smtp.gmail.com'
+
+  ## Build PHP Mailer
+  smtp-php:
+      build: ./smtp-php
+      restart: always
+      environment:
+          SMTP_USER: 'lorem'
+          SMTP_PASS: 'foobarbat'
+          SMTP_DOMAIN: 'smtp.gmail.com'
+
+  ## Build Ruby Mailer
+  smtp-ruby:
+    build: ./smtp-ruby
+    restart: always
+    environment:
+        SMTP_USER: 'lorem'
+        SMTP_PASS: 'foobarbat'
+        SMTP_DOMAIN: 'smtp.gmail.com'
+
+  # Build nginx Container
+  web-nginx:
+    build: ./web-nginx
+    tty: true
+    links:
+      - api-node
+    ports:
+      - '9090:9090'
+
+  ## Build Postgres Container
+  postgres:
+    build: ./db-postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: foobarbat
+      POSTGRES_USER: worker
+      POSTGRES_MULTIPLE_DATABASES: "base,base-test,base-dev"
+    ports:
+      - '5432:5432'
+
+
+  ## Build redis Container
+  redis:
+    build: ./db-redis
+    restart: always
+    container_name: redis
+    tty: true
+    environment:
+      - 'ALLOW_EMPTY_PASSWORDS=yes'
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis_data:/data/redis'
+
+
+  ## Build static UI Container
+  ui-static:
+      build: ./ui-static
+      restart: always
+      ports:
+        - '8888:8888'
+
+  ## Build vue UI Container
+  ui-vue:
+      build: ./ui-vue
+      restart: always
+
+  ## Build react UI Container
+  ui-react:
+      build: ./ui-react
+      restart: always
+      ports:
+          - '5000:5000'
+
+volumes:
+    backend:
+    redis_data:

@@ -1,0 +1,20 @@
+apiVersion: serving.knative.dev/v1alpha1 # Current version of Knative
+kind: Service
+metadata:
+  name: node-server # The name of the app
+  namespace: default # The namespace the app will use
+  labels:
+      app: node-server
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        metadata:
+            labels:
+                app: node-server    # LABEL HERE TO BE USED FOR LOGGING
+        spec:
+          container:
+            image: gcr.io/next19-life-of-code/simple-server
+            env:
+              - name: MESSAGE # The environment variable printed out by the sample app
+                value: "Node v1!"

@@ -1,0 +1,17 @@
+{
+  "name": "js_v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/client": "^4.8.0",
+    "async": "^2.6.1",
+    "google-spreadsheet": "^2.0.6",
+    "googleapis": "^36.0.0"
+  }
+}

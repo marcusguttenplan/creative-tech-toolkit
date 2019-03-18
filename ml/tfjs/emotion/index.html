@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+        <!--************** Meta Tag Information **************-->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="keywords" content="Sparks is a Global Brand Experience Agency">
+        <meta name="description" content="Sparks is a Global Brand Experience Agency">
+
+        <!--************** OpenGraph Tag Information **************-->
+        <meta property="og:title" content="Sparks Creative Technology">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="http://impracticalapplications.com/img/01.gif">
+        <meta property="og:url" content="https://wearesparks.com/">
+        <meta property="og:description" content="Sparks is a Global Brand Experience Agency">
+
+        <!--************** Page Title **************-->
+        <title>Sparks Creative Technology</title>
+        <!--************** Page Title **************-->
+
+        <!--************** STYLESHEETS AND RESETS **************-->
+
+        <link rel="stylesheet" href="css/main.css">
+        <script src="./js/vendor/modernizr-2.8.3.min.js"></script>
+        <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+</head>
+
+
+<body>
+    <div class="center-content page-container">
+        <div class="progress" id="loader">
+          <div class="indeterminate"></div>
+        </div>
+        <div style="position: relative" class="margin">
+          <video onplay="onPlay(this)" id="inputVideo" autoplay muted></video>
+          <canvas id="overlay" />
+        </div>
+
+        <div id="test">
+        </div>
+
+
+        <div class="row side-by-side">
+
+          <!-- face_detector_selection_control -->
+          <div id="face_detector_selection_control" class="row input-field" style="margin-right: 20px;">
+            <select id="selectFaceDetector">
+              <option value="ssd_mobilenetv1">SSD Mobilenet V1</option>
+              <option value="tiny_face_detector">Tiny Face Detector</option>
+              <option value="mtcnn">MTCNN</option>
+            </select>
+            <label>Select Face Detector</label>
+          </div>
+          <!-- face_detector_selection_control -->
+
+          <!-- check boxes -->
+          <div class="row" style="width: 220px;">
+            <input type="checkbox" id="withFaceLandmarksCheckbox" onchange="onChangeWithFaceLandmarks(event)" />
+            <label for="withFaceLandmarksCheckbox">Start Detection</label>
+            <!-- <input type="checkbox" id="hideBoundingBoxesCheckbox" onchange="onChangeHideBoundingBoxes(event)" />
+            <label for="hideBoundingBoxesCheckbox">Hide Bounding Boxes</label> -->
+          </div>
+          <!-- check boxes -->
+
+          <!-- fps_meter -->
+          <div id="fps_meter" class="row side-by-side">
+            <div>
+              <label for="time">Time:</label>
+              <input disabled value="-" id="time" type="text" class="bold">
+              <label for="fps">Estimated Fps:</label>
+              <input disabled value="-" id="fps" type="text" class="bold">
+            </div>
+          </div>
+          <!-- fps_meter -->
+
+        </div>
+
+
+        <!-- ssd_mobilenetv1_controls -->
+        <span id="ssd_mobilenetv1_controls">
+          <div class="row side-by-side">
+            <div class="row">
+              <label for="minConfidence">Min Confidence:</label>
+              <input disabled value="0.5" id="minConfidence" type="text" class="bold">
+            </div>
+            <button
+              class="waves-effect waves-light btn"
+              onclick="onDecreaseMinConfidence()"
+            >
+              <i class="material-icons left">-</i>
+            </button>
+            <button
+              class="waves-effect waves-light btn"
+              onclick="onIncreaseMinConfidence()"
+            >
+              <i class="material-icons left">+</i>
+            </button>
+          </div>
+        </span>
+        <!-- ssd_mobilenetv1_controls -->
+
+        <!-- tiny_face_detector_controls -->
+        <span id="tiny_face_detector_controls">
+          <div class="row side-by-side">
+            <div class="row input-field" style="margin-right: 20px;">
+              <select id="inputSize">
+                <option value="" disabled selected>Input Size:</option>
+                <option value="128">128 x 128</option>
+                <option value="160">160 x 160</option>
+                <option value="224">224 x 224</option>
+                <option value="320">320 x 320</option>
+                <option value="416">416 x 416</option>
+                <option value="512">512 x 512</option>
+                <option value="608">608 x 608</option>
+              </select>
+              <label>Input Size</label>
+            </div>
+            <div class="row">
+              <label for="scoreThreshold">Score Threshold:</label>
+              <input disabled value="0.5" id="scoreThreshold" type="text" class="bold">
+            </div>
+            <button
+              class="waves-effect waves-light btn"
+              onclick="onDecreaseScoreThreshold()"
+            >
+              <i class="material-icons left">-</i>
+            </button>
+            <button
+              class="waves-effect waves-light btn"
+              onclick="onIncreaseScoreThreshold()"
+            >
+              <i class="material-icons left">+</i>
+            </button>
+          </div>
+        </span>
+        <!-- tiny_face_detector_controls -->
+
+        <!-- mtcnn_controls -->
+        <span id="mtcnn_controls">
+          <div class="row side-by-side">
+            <div class="row">
+              <label for="minFaceSize">Minimum Face Size:</label>
+              <input disabled value="20" id="minFaceSize" type="text" class="bold">
+            </div>
+            <button
+              class="waves-effect waves-light btn"
+              onclick="onDecreaseMinFaceSize()"
+            >
+              <i class="material-icons left">-</i>
+            </button>
+            <button
+              class="waves-effect waves-light btn"
+              onclick="onIncreaseMinFaceSize()"
+            >
+              <i class="material-icons left">+</i>
+            </button>
+          </div>
+        </span>
+        <!-- mtcnn_controls -->
+    </div>
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="./js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="./js/vendor/jquery-ui.min.js"></script>
+
+    <!-- material -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+
+    <!-- tf.js -->
+    <script src="./js/vendor/face-api.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> </script>
+
+    <!-- custom js -->
+    <script src="./js/drawing/drawing.js"></script>     <!-- MAIN SCRIPT -->
+    <script src="./js/drawing/faceDetectionControls.js"></script>   <!-- UI controls -->
+    <script src="./js/drawing/img-manipulation.js"></script>
+    <script src="./js/drawing/utils.js"></script>
+    <script src="./js/drawing/classes.js"></script>
+    <script src="./js/drawing/base.js"></script>
+    <script src="./js/drawing/custom-model.js"></script>
+
+
+    <script>
+    let forwardTimes = []
+    let withFaceLandmarks = false
+    let withBoxes = true
+
+    // Load Emotion Model
+    let emotionModel = new EmotionNet();
+    emotionModel.load();
+
+    function onChangeWithFaceLandmarks(e) {
+      withFaceLandmarks = $(e.target).prop('checked')
+    }
+
+    function onChangeHideBoundingBoxes(e) {
+      withBoxes = !$(e.target).prop('checked')
+    }
+
+    // Timer
+    function updateTimeStats(timeInMs) {
+      forwardTimes = [timeInMs].concat(forwardTimes).slice(0, 30)
+      const avgTimeInMs = forwardTimes.reduce((total, t) => total + t) / forwardTimes.length
+      $('#time').val(`${Math.round(avgTimeInMs)} ms`)
+      $('#fps').val(`${faceapi.round(1000 / avgTimeInMs)}`)
+    }
+
+    // Start video
+    async function onPlay() {
+      const videoEl = $('#inputVideo').get(0)
+
+      if(videoEl.paused || videoEl.ended || !isFaceDetectionModelLoaded())
+        return setTimeout(() => onPlay())
+
+      const options = getFaceDetectorOptions()
+      const ts = performance.now();
+
+      // const faceDetectionTask = faceapi.detectSingleFace(videoEl, options)   // Detect only One Face
+      const faceDetectionTask = faceapi.detectAllFaces(videoEl, options)    // Detect All Faces
+
+      // results ternary
+      const result = withFaceLandmarks
+        ? await faceDetectionTask.withFaceLandmarks()
+        : await faceDetectionTask
+
+      updateTimeStats(performance.now() - ts);
+
+      // Draw Ternary
+      const drawFunction = withFaceLandmarks
+        ? drawLandmarks
+        : drawDetections
+
+      if (result) {
+          // console.log("detect all", result);
+        drawFunction(videoEl, $('#overlay').get(0), [result], withBoxes);
+      }
+
+      setTimeout(() => onPlay())
+    }
+
+    async function runFaces() {
+      // load face detection and face landmark models
+      await changeFaceDetector(TINY_FACE_DETECTOR)
+      await faceapi.loadFaceLandmarkModel('./models/weights')
+
+      changeInputSize(320)  // Resize input
+
+      // try to access users webcam and stream the images to the video element
+      const stream = await navigator.mediaDevices.getUserMedia({ video: {} })
+      const videoEl = $('#inputVideo').get(0)
+      videoEl.srcObject = stream
+    }
+
+    function updateResults() {}
+
+    $(document).ready(function() {
+      initFaceDetectionControls()
+      runFaces()
+    })
+    </script>
+
+
+</body>
+
+
+</html>

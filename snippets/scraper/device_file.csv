@@ -1,0 +1,73 @@
+Device,Screen Dims,DPH,DPW,PXH,PXW,Ratio,PPI,Type
+Android One,4.5in 2.2×3.9in,569,320,854,480,16:9,1.5hdpi,phone_android
+Asus Zen Watch,1.6in 1.2×1.2in,213,213,320,320,1:1,1.5hdpi,watch
+Dell Venue 8,8.4in 4.5×7.1in,1280,800,2560,1600,16:10,2.0xhdpi,tablet_android
+Google Pixel,5.0in 2.5×4.4in,731,411,1920,1080,16:9,2.6xxhdpi,phone_android
+Google Pixel XL,5.5in 2.7×4.8in,731,411,2560,1440,16:9,3.5xxxhdpi,phone_android
+HTC One M8,5.0in 2.5×4.4in,640,360,1920,1080,16:9,3.0xxhdpi,phone_android
+HTC One M9,5.0in 2.5×4.4in,640,360,1920,1080,16:9,3.0xxhdpi,phone_android
+LG G Watch,1.7in 1.2×1.2in,187,187,280,280,1:1,1.5hdpi,watch
+LG G Watch R,1.8in 1.3×1.3in,213,213,320,320,1:1,1.5hdpi,watch
+LG G2,5.2in 2.5×4.5in,640,360,1920,1080,16:9,3.0xxhdpi,phone_android
+LG G3,5.5in 2.7×4.8in,853,480,2560,1440,16:9,3.0xxhdpi,phone_android
+Moto 360,1.6in 1.6×1.4in,218,241,290,320,32:29,1.3tvdpi,watch
+Moto 360 v2 42mm,1.4in 1.2×1.2in,244,241,325,320,65:64,1.3tvdpi,watch
+Moto 360 v2 46mm,1.6in 1.4×1.4in,248,241,330,320,33:32,1.3tvdpi,watch
+Moto G,4.5in 2.2×3.9in,640,360,1280,720,16:9,2.0xhdpi,phone_android
+Moto X,4.7in 2.3×4.1in,640,360,1280,720,16:9,2.0xhdpi,phone_android
+Moto X (2nd Gen),5.2in 2.5×4.5in,640,360,1920,1080,16:9,3.0xxhdpi,phone_android
+Nexus 10,10.1in 8.6×5.4in,800,1280,1600,2560,16:10,2.0xhdpi,tablet_android
+Nexus 4,4.7in 3.2×4.0in,640,384,1280,768,5:3,2.0xhdpi,phone_android
+Nexus 5,5.0in 2.4×4.3in,640,360,1920,1080,16:9,3.0xxhdpi,phone_android
+Nexus 5X,5.2in 2.5×4.5in,731,411,1920,1080,16:9,2.6xxhdpi,phone_android
+Nexus 6,6.0in 2.9×5.2in,731,411,2560,1440,16:9,3.5xxxhdpi,phone_android
+Nexus 6P,5.7in 2.8×5.0in,731,411,2560,1440,16:9,3.5xxxhdpi,phone_android
+Nexus 7 ('12),7.0in 3.7×5.9in,960,600,1280,800,16:10,1.3tvdpi,tablet_android
+Nexus 7 ('13),7.0in 3.7×6.0in,960,600,1920,1200,16:10,2.0xhdpi,tablet_android
+Nexus 9,8.9in 7.1×5.3in,768,1024,1536,2048,4:3,2.0xhdpi,tablet_android
+Samsung Galaxy Note 4,5.7in 2.8×5.0in,853,480,2560,1440,16:9,3.0xxhdpi,phone_android
+Samsung Galaxy S5,5.1in 2.9×5.6in,640,360,1920,1080,16:9,3.0xxhdpi,phone_android
+Samsung Galaxy S6,5.1in 2.5×4.4in,640,360,2560,1440,16:9,4.0xxxhdpi,phone_android
+Samsung Galaxy S7,5.1in 2.5×4.4in,640,360,2560,1440,16:9,4.0xxxhdpi,phone_android
+Samsung Galaxy S7 Edge,5.5in 2.7×4.8in,640,360,2560,1440,16:9,4.0xxxhdpi,phone_android
+Samsung Galaxy S8,5.8in 2.5×5.2in,740,360,2960,1440,18.5:9,4.0xxxhdpi,phone_android
+Samsung Galaxy S8+,6.2in 2.7×5.6in,740,360,2960,1440,18.5:9,4.0xxxhdpi,phone_android
+Samsung Galaxy Tab 10,10.1in 5.4×8.6in,1280,800,1280,800,16:10,1.0mdpi,tablet_android
+Samsung Gear Live,1.7in 1.2×1.2in,213,213,320,320,1:1,1.5hdpi,watch
+Sony Smartwatch 3,1.6in 1.1×1.1in,213,213,320,320,1:1,1.5hdpi,watch
+Sony Xperia C4,5.5in 2.7×4.8in,960,540,1920,1080,16:9,2.0xhdpi,phone_android
+Sony Xperia Z Ultra,6.4in 3.1×5.6in,960,540,1920,1080,16:9,2.0xhdpi,phone_android
+Sony Xperia Z1 Compact,4.3in 2.1×3.7in,640,360,1280,720,16:9,2.0xhdpi,phone_android
+Sony Xperia Z2/Z3,5.2in 2.5×4.5in,640,360,1920,1080,16:9,3.0xxhdpi,phone_android
+Sony Xperia Z3 Compact,4.6in 2.3×4.0in,640,360,1280,720,16:9,2.0xhdpi,phone_android
+Sony Xperia Z3 Tablet,8.0in 6.8×4.2in,600,960,1200,1920,16:10,2.0xhdpi,tablet_android
+Sony Xperia Z4 Tablet,10.1in 8.6×5.4in,800,1280,1600,2560,16:10,2.0xhdpi,tablet_android
+Chromebook 11,11.6in 10.1×5.7in,768,1366,768,1366,16:9,1.0mdpi,laptop
+Chromebook Pixel,12.9in 10.7×7.1in,850,1280,1700,2560,3:2,2.0xhdpi,laptop
+Chromebox 30,30.0in 25.4×15.9in,1600,2560,1600,2560,16:10,1.0mdpi,desktop_mac
+Apple Watch 38mm,1.5in 0.9×1.2in,170,136,340,272,5:4,2.0xhdpi,watch
+Apple Watch 42mm,1.7in 1.0×1.3in,195,156,390,312,5:4,2.0xhdpi,watch
+iPad,9.7in 5.8×7.8in,1024,768,1024,768,4:3,1.0mdpi,tablet_android
+iPad Mini,7.9in 4.7×6.3in,1024,768,1024,768,4:3,1.0mdpi,tablet_android
+iPad Mini Retina,7.9in 4.7×6.3in,1024,768,2048,1536,4:3,2.0xhdpi,tablet_android
+iPad Pro,12.9in 10.3×7.7in,1024,1366,2048,2732,4:3,2.0xhdpi,tablet_android
+iPad Retina,9.7in 5.8×7.8in,1024,768,2048,1536,4:3,2.0xhdpi,tablet_android
+iPhone,3.5in 1.9×2.9in,480,320,480,320,3:2,1.0mdpi,phone_android
+iPhone 4,3.5in 2.0×2.9in,480,320,960,640,3:2,2.0xhdpi,phone_android
+iPhone 5,4.0in 2.0×3.5in,568,320,1136,640,16:9,2.0xhdpi,phone_android
+iPhone 6,4.7in 2.3×4.1in,667,375,1334,750,16:9,2.0xhdpi,phone_android
+iPhone 6 Plus,5.5in 2.7×4.8in,736,414,1920,1080,16:9,3.0xxhdpi(115.00%),phone_android
+iMac 27,27.0in 23.5×13.2in,1440,2560,1440,2560,16:9,1.0mdpi,desktop_mac
+iMac 5K,27.0in 23.5×13.2in,1440,2560,2880,5120,16:9,2.0xhdpi,desktop_mac
+MacBook 12,12.0in 10.2×6.4in,800,1280,1440,2304,16:10,2.0xhdpi(111.11%),laptop
+MacBook Air 11,11.6in 10.1×5.7in,768,1366,768,1366,16:9,1.0mdpi,laptop
+MacBook Air 13,13.3in 11.3×7.0in,900,1440,900,1440,16:10,1.0mdpi,laptop
+MacBook Pro 13,13.3in 11.3×7.0in,800,1280,1600,2560,16:10,2.0xhdpi,laptop
+MacBook Pro 15,15.4in 13.1×8.2in,900,1440,1800,2880,16:10,2.0xhdpi,laptop
+Surface,10.6in 9.2×5.2in,768,1366,768,1366,16:9,1.0mdpi,laptop
+Surface 2,10.6in 9.2×5.2in,720,1280,1080,1920,16:9,1.5hdpi,laptop
+Surface 3,10.8in 9.4×5.3in,720,1280,1080,1920,16:9,1.5hdpi,laptop
+Surface Book,13.5in 11.2×7.5in,1000,1500,2000,3000,3:2,2.0xhdpi,laptop
+Surface Pro,10.6in 9.2×5.2in,720,1280,1080,1920,16:9,1.5hdpi,laptop
+Surface Pro 3,12.0in 10.0×6.7in,960,1440,1440,2160,3:2,1.5hdpi,laptop
+Surface Pro 4,12.4in 10.3×6.9in,912,1368,1824,2736,3:2,2.0xhdpi,laptop

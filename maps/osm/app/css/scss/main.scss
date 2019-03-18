@@ -1,0 +1,519 @@
+// @import 'vendor/bootstrap/bootstrap';
+@import 'vendor/font-awesome/font-awesome';
+// @import 'vendor/slick/slick';
+// @import 'vendor/slick/slick-theme';
+@import 'vendor/base/base';
+
+/*
+//
+//
+// Media Queries
+//
+//
+*/
+
+$break-xl: 1366px;
+$break-lg: 1280px;
+$break-md: 1024px;
+$break-sm: 768px;
+$break-xs: 480px;
+
+// @mixin mq-xl {
+//   @include mq($min-width: 75rem) {
+//       @content;
+//   }
+// }
+//
+// @mixin mq-lg {
+//   @include mq($max-width: 62rem) {
+//       @content;
+//   }
+// }
+//
+// @mixin mq-md {
+//     @include mq($max-width: 48rem) {
+//         @content;
+//     }
+// }
+//
+// @mixin mq-sm {
+//     @include mq($max-width: 36rem) {
+//         @content;
+//     }
+// }
+//
+// @mixin mq-xs {
+//     @include mq($max-width: 30rem) {
+//         @content;
+//     }
+// }
+
+@mixin mq-xl {
+  @include mq($min-width: $break-xl) {
+      @content;
+  }
+}
+
+@mixin mq-lg {
+  @include mq($max-width: $break-lg) {
+      @content;
+  }
+}
+
+@mixin mq-md {
+    @include mq($max-width: $break-md) {
+        @content;
+    }
+}
+
+@mixin mq-sm {
+    @include mq($max-width: $break-sm) {
+        @content;
+    }
+}
+
+@mixin mq-xs {
+    @include mq($max-width: $break-xs) {
+        @content;
+    }
+}
+
+
+
+
+/*
+//
+//
+// Helpers
+//
+//
+*/
+
+// @include font("source-code-pro", "SourceCodePro-LightIt", 300);
+// @include font("source-code-pro", "SourceCodePro-Light", 300);
+// @include font("source-code-pro", "SourceCodePro-It", 500);
+// @include font("source-code-pro", "SourceCodePro-Regular", 500);
+// @include font("source-code-pro", "SourceCodePro-MediumIt", 600);
+// @include font("source-code-pro", "SourceCodePro-Medium", 600);
+// @include font("source-code-pro", "SourceCodePro-SemiboldIt", 700);
+// @include font("source-code-pro", "SourceCodePro-Semibold", 700);
+// @include font("source-code-pro", "SourceCodePro-BoldIt", 800);
+// @include font("source-code-pro", "SourceCodePro-Bold", 800);
+// @include font("source-code-pro", "SourceCodePro-BlackIt", 900);
+// @include font("source-code-pro", "SourceCodePro-Black", 900);
+//
+//
+// @include font("source-sans-pro", "SourceSansPro-LightIt", 300);
+// @include font("source-sans-pro", "SourceSansPro-Light", 300);
+// @include font("source-sans-pro", "SourceSansPro-It", 500);
+// @include font("source-sans-pro", "SourceSansPro-Regular", 500);
+// @include font("source-sans-pro", "SourceSansPro-MediumIt", 600);
+// @include font("source-sans-pro", "SourceSansPro-Medium", 600);
+// @include font("source-sans-pro", "SourceSansPro-SemiboldIt", 700);
+// @include font("source-sans-pro", "SourceSansPro-Semibold", 700);
+// @include font("source-sans-pro", "SourceSansPro-BoldIt", 800);
+// @include font("source-sans-pro", "SourceSansPro-Bold", 800);
+// @include font("source-sans-pro", "SourceSansPro-BlackIt", 900);
+// @include font("source-sans-pro", "SourceSansPro-Black", 900);
+
+// @include font("Din", "DINEngschriftStd", 500);
+// @include font("Din", "DINMittelschriftStd", 500);
+@include font("Din", "DINNextLTPro-Bold", 500);
+
+
+
+@-webkit-keyframes blink {
+  0% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+  0% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes blink {
+  0% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes blink {
+  0% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes type { to { width: 100%; }}
+@-moz-keyframes type { to { width: 100%; }}
+@-o-keyframes type { to { width: 100%; }}
+@keyframes type { to { width: 100%; }}
+
+
+
+$red: #fc533e;
+$blue: #359aff;
+$black: #333333;
+$dg: #444444;
+$gray: #999999;
+$lg: #d5d5d5;
+$xlg: #eee;
+
+
+
+.noscroll {
+    position: fixed;
+    overflow: hidden;
+}
+
+
+
+.xxxsm_tyoe {
+    font-size: 1rem;
+    letter-spacing: 0.03rem;
+}
+
+.xxsm_tyoe {
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+}
+
+.xsm_type {
+    font-size: 1.5rem;
+    letter-spacing: 0.03rem;
+}
+.sm_type {
+    font-size: 3rem;
+    letter-spacing: 0.03rem;
+}
+.md_type {
+    font-size: 4rem;
+    letter-spacing: 0.03rem;
+}
+.lg_type {
+    font-size: 5rem;
+    letter-spacing: 0.03rem;
+}
+.bold_type {
+    font-weight: bold;
+    color: #404040;
+}
+.extrabold {
+    font-weight: 900;
+}
+
+// .gray-85 {color: rgba(255, 255, 255, .85);}
+// .invert {color: $black;}
+.dg {color:$dg;}
+.gray {color: $gray;}
+.lg {color:$lg;}
+.xlg {color: $xlg;}
+// .whitebg {background-color: #ffffff;}
+.white {color: #ffffff;}
+.blackbg {background-color: $black;}
+.black {color: $black;}
+
+.block {display: block;}
+.inline {display: inline;}
+.flex {display:flex; align-items: center;}
+
+.hidden {display: none;}
+.visible {display: inline;}
+
+.row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.pad-sm {padding: 1rem;}
+.pad-md {padding: 2rem;}
+.pad-l {padding: 3rem;}
+.no-pad {padding: 0; margin: 0;}
+
+.text-right {text-align: right;}
+.text-center {text-align: center;}
+.text-left {text-align: left;}
+.pull-right {float: right !important;}
+.pull-left {float: left !important;}
+
+button {cursor: pointer; background-color: transparent;}
+button:focus, input:focus, summary {outline: none;}
+summary {cursor: pointer;}
+.ui-accordion-header {outline: none;}
+a { cursor: pointer; }
+
+h1, h2, h3, h4, h5 {
+    font-family: "Din", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    &:not(h1, h3) {
+        color: $red;
+    }
+}
+h1 {font-size: 4rem;}
+h2 { font-size: 2.25rem; letter-spacing: .04rem;}
+h3 { font-size: 1.8rem; letter-spacing: .03rem;}
+h4 { font-size: 1.5rem; letter-spacing: .02rem;}
+h5 { font-size: 1.2rem; letter-spacing: .02rem;}
+b {font-weight: 800;}
+p, small, text, i, ul, li {font-family: "source-sans-pro", sans-serif;}
+ul { padding: 0; }
+ul, li, ol {
+    // text-decoration: none;
+    // list-style: none;
+    // font-size: .9rem;
+    // font-family: "source-code-pro", sans-serif;
+    @include mq-sm {
+        // font-size: 1.5rem;
+    }
+    padding: 5px 0;
+
+}
+ul {
+
+}
+// code {word-break: break-all;}
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+    @include mq-sm {
+        font-size: 1.5rem;
+    }
+}
+
+@include mq-sm {
+    h3 { font-size: 2rem; letter-spacing: .03rem;}
+    h4 { font-size: 1.75rem; letter-spacing: .02rem;}
+    h5 { font-size: 1.5rem; letter-spacing: .02rem;}
+    ul, li, b {
+        font-size: 1.5rem;
+    }
+}
+
+.sectionheader {
+    color: $red;
+}
+
+.pane {
+    position: absolute;
+    top: 20px; right: 20px; bottom: 20px; left: 20px;
+    background-color: rgba(#000,.85);
+    .centerer {
+        width: 70%;
+        z-index: 2;
+        color: #fff;
+        @include mq-sm {
+            width: 78%;
+            // height: 80%;
+        }
+    }
+}
+
+code {
+    color: $red;
+    // color: #e0c46c;
+    // color: #f8f8f2;
+    // color: #cb7832;
+    // background-color: lighten(#333, 6);
+    padding: 0.1rem 0.4rem;
+    font-family: "source-code-pro", sans-serif;
+    font-size: 1rem;
+}
+pre {
+    // color: #fff;
+    background-color: lighten($xlg, 5);
+    // background-color: $gray;
+    // background-color: #333;
+    // background-color: transparent;
+    // color: #f8f8f2;
+    // background: lighten($black, 6);
+    padding: 15px;
+    margin: 35px 0;
+    font-family: "source-code-pro", sans-serif;
+    font-size: 1rem;
+    // max-height: 300px;
+    // overflow: scroll;
+}
+
+.col-flex {
+    display: flex;
+    flex: 1;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.gradient {
+    @include gradient(rgba(73,155,234,1), rgba(32,124,229,1), vertical);
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+@mixin fix {
+    transform: translateZ(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+}
+
+
+.marker-cluster-small {
+	background-color: rgba(181, 226, 140, 0.7);
+	}
+.marker-cluster-small div {
+	background-color: rgba(110, 204, 57, 0.7);
+	}
+
+.marker-cluster-medium {
+	background-color: rgba(241, 211, 87, 0.7);
+	}
+.marker-cluster-medium div {
+	background-color: rgba(240, 194, 12, 0.7);
+	}
+
+.marker-cluster-large {
+	background-color: rgba(253, 156, 115, 0.7);
+	}
+.marker-cluster-large div {
+	background-color: rgba(241, 128, 23, 0.8);
+	}
+
+[class^='marker-cluster-'] {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.leaflet-marker-icon.marker-cluster {
+	// background-clip: padding-box;
+	border-radius: 50%;
+    width: 100px;
+	height: 100px;
+    // visibility: hidden;
+	}
+.marker-cluster div {
+	// width: 100px;
+	// height: 100px;
+	// margin-left: 5px;
+	// margin-top: 5px;
+
+	text-align: center;
+	border-radius: 50%;
+
+	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	}
+.marker-cluster span {
+	line-height: 30px;
+	}
+
+
+
+
+
+
+
+.mapboxgl-popup-content {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 0, 0, 0.7);
+    position: relative;
+
+    span {
+        color: #fff;
+        width: auto;
+        height: auto;
+        @include centerer;
+        text-align: center;
+        // visibility: hidden;
+        font-size: 10px;
+    }
+    b {
+        font-size: 17px;
+        letter-spacing: 0.08rem;
+    }
+}
+
+.mapboxgl-popup-tip {
+    display: none;
+}
+
+
+
+.fade-in {
+    opacity: 1;
+    animation: fade 0.5s linear;
+}
+
+@keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+
+
+
+
+/*
+//
+//
+//
+//
+//
+// Body
+//
+//
+//
+//
+//
+*/
+
+
+
+
+
+
+
+body,
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+    // height: 100% !important;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    font-family: "source-sans-pro", sans-serif;
+    font-size: 16px;
+    // background-color: $xlg;
+    @include mq-xl() { font-size: 16px; }
+    @include mq-lg() { font-size: 15px; }
+    @include mq-md() { font-size: 14px; }
+    @include mq-sm() { font-size: 13px; }
+    @include mq-xs() { font-size: 12px; }
+}
+
+main {}
+
+#map {
+    height: 100vh; width: 100vw;
+}

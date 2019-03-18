@@ -1,0 +1,23 @@
+{
+  "name": "sparks-bigquery",
+  "version": "1.0.0",
+  "description": "BigQuery tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusguttenplan/sparks-bigquery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcusguttenplan/sparks-bigquery/issues"
+  },
+  "homepage": "https://github.com/marcusguttenplan/sparks-bigquery#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^1.3.0",
+    "yargs": "^11.0.0"
+  }
+}

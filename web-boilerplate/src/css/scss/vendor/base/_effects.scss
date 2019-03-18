@@ -1,0 +1,194 @@
+/*
+//
+// Gradient
+// Usage: @include gradient(#xxx, #xxx, vertical);
+//
+*/
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+      background-color: $start-color;
+      background-image: -webkit-gradient(linear, left top, left bottom, from($start-color), to($end-color));
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background:    -moz-linear-gradient(top, $start-color, $end-color);
+      background:     -ms-linear-gradient(top, $start-color, $end-color);
+      background:      -o-linear-gradient(top, $start-color, $end-color);
+      background:         linear-gradient(top, $start-color, $end-color);
+      filter:            progid:DXImageTransform.Microsoft.gradient(start-colorStr='#{$start-color}', end-colorStr='#{$end-color}');
+  } @else if $orientation == 'horizontal' {
+      background-color: $start-colour;
+      background-image: -webkit-gradient(linear, left top, right top, from($start-colour), to($end-colour));
+      background: -webkit-linear-gradient(left, $start-colour, $end-colour);
+      background:    -moz-linear-gradient(left, $start-colour, $end-colour);
+      background:     -ms-linear-gradient(left, $start-colour, $end-colour);
+      background:      -o-linear-gradient(left, $start-colour, $end-colour);
+      background:         linear-gradient(left, $start-colour, $end-colour);
+      filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}', gradientType='1');
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background:    -moz-radial-gradient(left, $start-colour, $end-colour);
+    background:     -ms-radial-gradient(left, $start-colour, $end-colour);
+    background:      -o-radial-gradient(left, $start-colour, $end-colour);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+
+/* rgba backgrounds */
+@function solid-lighten($color, $percentage) {
+  @return lighten($color, (1-$percentage)*5%);
+}
+@function solid-darken($color, $percentage) {
+  @return darken($color, (1-$percentage)*5%);
+}
+@mixin rgba($type, $color, $percentage, $shade: ligthen) {
+  @if $shade == lighten {
+    @if $type == color {
+      color: solid-lighten($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: solid-lighten($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
+  }
+  @else {
+     @if $type == color {
+      color: solid-darken($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: solid-darken($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
+  }
+}
+
+/*
+//
+// Border Radius
+// Usage: @include border-radius(0, 0, 0, 0);
+//
+*/
+@mixin border-radius($top-left-radius, $top-right-radius, $bottom-right-radius, $bottom-left-radius) {
+    @include prefix(border-top-left-radius, $top-left-radius, 'webkit' 'moz' 'ms' 'o');
+    @include prefix(border-top-right-radius, $top-right-radius, 'webkit' 'moz' 'ms' 'o');
+    @include prefix(border-bottom-right-radius, $bottom-right-radius, 'webkit' 'moz' 'ms' 'o');
+    @include prefix(border-bottom-left-radius, $bottom-left-radius, 'webkit' 'moz' 'ms' 'o');
+}
+
+/*
+//
+// Triple Border
+// Usage: @include triple-border(#xxx, #xxx, #xxx, radius);
+//
+*/
+@mixin triple-borders($colorOne: #3C3C3C, $colorTwo: #999999, $colorThree: #000000, $radius: 0) {
+    border: 1px solid $colorOne;
+
+    @include border-radius($radius);
+
+    @include prefix(box-shadow, "0 0 0 1px #{$colorTwo}, 0 0 0 2px #{$colorThree}", 'webkit' 'moz' 'ms' 'o');
+}
+
+/*
+//
+// Outline Element
+//
+*/
+@mixin outline {
+    box-shadow: rgba(255, 255, 255, 0.5) 0 1px 0, inset rgba(0, 0, 0, 0.75) 0 1px 0;
+}
+
+/*
+//
+// Text Shadow
+//
+*/
+@mixin text-shadow($value) {
+    text-shadow: rgba(255, 255, 255, $value) 0 1px 0;
+}
+
+/*
+//
+// Long Shadow
+// Usage: @include long-shadow(box/text, #000, 200, false, false, left);
+//
+*/
+
+@mixin long-shadow($type, $color, $length, $fadeout: true, $skew: false, $direction: right){
+  $shadow: '';
+  @if $skew == false or $type == text{
+    @if $direction == right {
+      @for $i from 0 to $length - 1 {
+        $shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + $color + ',';
+      }
+    }
+    @if $direction == left {
+      @for $i from 0 to $length - 1 {
+        $shadow: $shadow + $i * -1 + 'px ' + $i + 'px 0 ' + $color + ',';
+       }
+      }
+     }
+   @if $fadeout == true{
+    @for $i from 1 to $length - 1 {
+      @if $type == text or $skew == false{
+        @if $direction == right{
+          $shadow: $shadow + $i + 'px ' + $i + 'px 0 ' +       rgba($color, 1 - $i / $length) + ',';
+        }
+        @if $direction == left{
+          $shadow: $shadow + $i * -1 + 'px ' + $i + 'px 0 ' +       rgba($color, 1 - $i / $length) + ',';
+        }
+      }
+      @if ($type == box) and $skew == true{
+        @if $direction == right {
+          $shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + $i * .2 + 'px ' + rgba($color, 1 - $i / $length) + ',';
+        }
+        @if $direction == left {
+          $shadow: $shadow + $i * -1 + 'px ' + $i + 'px 0 ' + $i * .2 + 'px ' + rgba($color, 1 - $i / $length) + ',';
+        }
+      }
+  }
+  $shadow: $shadow + $length + 'px ' + $length + 'px 0 ' + rgba($color, 0);
+ }
+ @if $fadeout == false{
+   @if $skew == true and ( $type == box ){
+     @for $i from 0 to $length - 1 {
+            $shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + $i * .1 + 'px ' + $color + ',';
+      }
+   }
+    $shadow: $shadow + $length + 'px ' + $length + 'px 0 ' + rgba(0,0,0,0);
+ }
+ $shadow: unquote($shadow);
+  @if $type == 'box' {box-shadow: $shadow;}
+  @if $type == 'text' {text-shadow: $shadow;}
+}
+
+/*
+//
+// Cross-Browser Opacity
+//
+*/
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/*
+//
+// Fade in and Out
+//
+*/
+@mixin fade($fade-from: 0, $fade-to: 1, $animation-properties: 1s ease) {
+    $alias: fade- + str-replace($fade-from + '', '.', '-') + '-' + str-replace($fade-to + '', '.', '-');
+    @include keyframes($alias){
+    from {
+      @include opacity($fade-from);
+    }
+    to {
+      @include opacity($fade-to);
+    }
+  }
+  @include prefix(animation, $alias $animation-properties, 'webkit' 'moz' 'ms' 'o');
+}

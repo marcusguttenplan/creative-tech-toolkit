@@ -1,0 +1,236 @@
+/*
+//
+//
+//
+//
+// HELPERS
+//
+//
+//
+//
+*/
+
+
+/* vendor prefixer */
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value;
+}
+
+/* moz fix */
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+/* force hw acceleration */
+@mixin hw-acc {
+    @include prefix(transform, translate3d(0, 0, 0), 'webkit' 'ms');
+}
+
+/* clearfixer */
+@mixin clearfix {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+// Apply clearfix to this classes by default
+.clearfix,
+.group {
+  @include clearfix;
+}
+
+
+/* at least x elements */
+@mixin at-least($count) {
+    $selector-append: ':nth-last-child(n+#{$count})';
+
+    @if type-of($count) != 'number' or not unitless($count) or $count < 1 {
+        @error '`#{$count}` is not a valid number for `at-least`';
+    }
+
+    @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1) {
+        @error '`#{$selector}` is not a valid selector for `at-least`';
+    }
+
+    $at-least-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$at-least-selector} {
+        @content;
+    }
+ }
+
+
+/* v + h centerer */
+@mixin centerer($horizontal: true, $vertical: true) {
+    position: absolute;
+    @if ($horizontal and $vertical) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @else if ($horizontal) {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    @else if ($vertical) {
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+/* h centerer */
+@mixin h_centerer {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+/* centerer class */
+.centerer {
+    @include centerer;
+}
+
+
+@mixin link ($link, $hover, $bg: "", $outline: "") {
+	cursor: pointer;
+	background-color: $bg;
+	color: $link;
+	text-decoration: none;
+	@if $outline != "" {
+		border: 1px solid $outline;
+		border-radius: 5px;
+	}
+	&:visited {
+		color: $link;
+	}
+	&:hover {
+		color: $hover;
+		text-decoration: none;
+		@if $outline != "" {
+			background-color: $outline;
+			color: $link;
+		}
+	}
+	&:active,
+	&:focus {
+		color: $link;
+		@if $outline != "" {
+			background-color: $outline;
+			color: $link;
+		}
+	}
+}
+
+
+
+/* responsive images */
+@mixin img-responsive($display: block) {
+    display: $display;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+/* responsive image aspect ratio */
+@mixin img-responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            // padding-top: $padding;
+        }
+    }
+    @else {
+        // padding-top: $padding;
+    }
+}
+
+/* element aspect ratio */
+@mixin aspect-ratio($arglist... /*$width/$ratio, $height*/) {
+    $map: keywords($arglist);
+    $height: map-get($map, height) or nth-or-null($arglist, 2);
+    $width: map-get($map, width) or nth-or-null($arglist, 1);
+    $ratio: map-get($map, ratio) or if($width and $height, $width/$height, nth-or-null($arglist, 1)) or 1;
+    $padding: 1/$ratio * 100%;
+
+    &:before {
+        content: '';
+        float: left;
+        padding-bottom: $padding;
+        margin-right: -100%;
+    }
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+// Helper: Return null rather than throwing an error if index is outside list range.
+@function nth-or-null($list, $index) {
+     @return if(length($list) >= $index, nth($list, $index), null);
+}
+
+
+
+
+
+
+
+/* positioning */
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+// Positioning helpers
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+
+/* dimension setters */
+@mixin size($width: null, $height: $width) {
+	width: $width;
+	height: $height;
+ }
+
+
+/* z-indexer */
+// $z-indexes: (
+//     "outdated-browser",
+//     "modal",
+//     "site-header",
+//     "page-wrapper",
+//     "site-footer"
+// );
+@function z($name) {
+    @if index($z-indexes, $name) {
+        @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+    } @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}

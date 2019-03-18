@@ -1,0 +1,24 @@
+apiVersion:                 serving.knative.dev/v1alpha1 # Current version of Knative
+kind:                       Service
+metadata:
+  name:                     node-server # The name of the app
+  namespace:                default # The namespace the app will use
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image:          gcr.io/next19-life-of-code/simple-server
+            volumeMounts:
+            - name:       minikube-knative
+              mountPath:    /secret
+            env:
+            - name:         GOOGLE_APPLICATION_CREDENTIALS    # import secret as env var
+              value:        /secret/minikube-knative.json
+            - name:         MESSAGE # The environment variable printed out by the sample app
+              value:        "Node v1!"
+            volumes:
+            - name:         minikube-knative
+              secret:
+                secretName: minikube-knative

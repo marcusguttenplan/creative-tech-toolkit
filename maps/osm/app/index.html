@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+        <!--************** Meta Tag Information **************-->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+        <!--************** OpenGraph Tag Information **************-->
+        <meta property="og:title" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="http://impracticalapplications.com/img/01.gif">
+        <meta property="og:url" content="">
+        <meta property="og:description" content="">
+
+        <!--************** Page Title **************-->
+        <title>Air View</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+        <!-- <link rel="shortcut icon" type="image/png" href="/img/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="shortcut icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16"> -->
+        <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+        <link rel="manifest" href="/img/favicon/manifest.json">
+        <meta name="theme-color" content="#ffffff">
+        <!--************** Page Title **************-->
+
+        <!--************** STYLESHEETS AND RESETS **************-->
+        <!-- Leaflet, Mapbox, Supercluster -->
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" /> -->
+        <!-- <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script> -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
+        <!-- <script src="https://unpkg.com/supercluster@3.0.2/dist/supercluster.min.js"></script> -->
+
+
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+
+
+</head>
+
+<body>
+
+<main>
+    <div id="map"></div>
+</main>
+
+
+
+
+
+<!-- jQuery -->
+<script src="js/vendor/jquery-3.1.1.min.js"></script>
+<script src="js/vendor/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+
+<script>
+
+// Init Socket
+const socket = io({
+    query: "id=" + 1
+});
+
+// Init Mapbox
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFyY3VzZ3V0dGVucGxhbiIsImEiOiJjampiemk4dXQzZGZwM3FvaHZybDU1Z253In0.ocsn30A2UF9s6i29ulgJDA';
+var worldBounds = [
+    [-122.461505, 37.688412],
+    [-121.978531, 37.876470]
+];
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v9',
+    maxBounds: worldBounds,
+    // center: [-122.372273, 37.701324],
+    center: [-122.213897, 37.785644],
+    zoom: 12
+});
+
+map.on('load', function(e) {
+    // Load GeoJSON
+    map.addSource("datapoints", {
+        type: "geojson",
+        data: "oak_out_v02.geojson",
+        cluster: false,
+        // cluster: true,
+        buffer: 60,
+        clusterMaxZoom: 18, // Max zoom to cluster points on
+        clusterRadius: 11 // Radius of each cluster when clustering points (defaults to 50)
+    });
+
+    map.addLayer({
+        id: "clusters",
+        source: "datapoints",
+        filter: ["has", "point_count"],
+        interactive: true,
+        ////// Heatmap Layer
+        maxZoom: 18,
+        type: "heatmap",
+        paint: {
+            "heatmap-radius" : {
+                stops: [
+                    [0, 30],
+                    [30, 90],
+                    [90, 200],
+                    [200, 400],
+                    [400, 1000]
+                ]
+            },
+            'heatmap-opacity': {
+                default: 1,
+                stops: [
+                    [14, 1],
+                    [17, 0]
+                ]
+            },
+            "heatmap-weight" : {
+                type: 'exponential',
+                stops: [
+                    [8, 0],
+                    [30, 1]
+                ]
+            },
+            // "heatmap-intensity" : {},
+            "heatmap-color" : [
+                'interpolate',
+                ['linear'],
+                ['heatmap-density'],
+                // ["get", "no"],
+                // "step",
+                // ["get", "no"],
+                0, 'rgba(181, 226, 140, 0.0)',
+                0.2, 'rgba(110, 204, 57, 1.0)',
+                0.4, 'rgba(241, 211, 87, 1.0)',
+                0.6, 'rgba(240, 194, 12, 1.0)',
+                0.8, 'rgba(241, 128, 23, 1.0)'
+                ]
+        }
+        // //// Circle Layer
+        // type: "circle",
+        // paint: {
+        //     "circle-color": [
+        //         "step",
+        //         ["get", "point_count"],
+        //         // ["get", "no"],
+        //         "rgba(110, 204, 57, 0.7)",
+        //         25,
+        //         "rgba(240, 194, 12, 0.7)",
+        //         50,
+        //         "rgba(241, 128, 23, 0.6)"
+        //     ],
+        //     "circle-radius": [
+        //         "step",
+        //         ["get", "point_count"],
+        //         20,
+        //         100,
+        //         30,
+        //         750,
+        //         40
+        //     ]
+        // }
+    });
+
+    map.addLayer({
+        id: "cluster-count",
+        type: "symbol",
+        source: "datapoints",
+        filter: ["has", "point_count"],
+        layout: {
+            // "text-field": "{point_count_abbreviated}", // Add Counts to Clusters
+            "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+            "text-size": 12
+        }
+    });
+
+
+    map.addLayer({
+        id: "unclustered-point-good",
+        type: "circle",
+        interactive: true,
+        source: "datapoints",
+        filter: ["!has", "point_count"],
+        // filter: ["<", "no", 25],
+        paint: {
+            "circle-opacity": 1,
+            "circle-opacity-transition": {
+                "duration": 3250
+            },
+            // "circle-color": "rgba(110, 204, 57, 0.7)",
+            "circle-color": [
+                "step",
+                ["get", "no"],
+                "rgba(110, 204, 57, 0.7)",
+                50,
+                "rgba(240, 194, 12, 0.7)",
+                80,
+                "rgba(241, 128, 23, 0.6)",
+                130,
+                "rgba(249, 41, 41, 0.7)",
+            ],
+            // "circle-radius": 1.25,
+            "circle-radius": [
+                "step",
+                ["get", "no"],
+                2,
+                50,
+                0.5
+            ],
+            // 'circle-opacity': 0.03,
+            // 'circle-opacity': [
+            //     "step",
+            //     ["get", "no"],
+            //     1,
+            //     25,
+            //     0.5
+            // ],
+            // 'circle-blur': .5,
+            // "circle-stroke-width": 1,
+            // "circle-stroke-color": "#fff"
+        }
+    });
+
+    map.addLayer({
+        id: "unclustered-point-bad",
+        type: "circle",
+        interactive: true,
+        source: "datapoints",
+        filter: ["!has", "point_count"],
+        // filter: ["!has", "point_count", ["<", "no", 25]],
+        paint: {
+            "circle-opacity": 0,
+            "circle-opacity-transition": {
+                "duration": 3250
+            },
+            // "circle-color": "rgba(110, 204, 57, 0.7)",
+            "circle-color": [
+                "step",
+                ["get", "no"],
+                "rgba(110, 204, 57, 0.7)",
+                25,
+                "rgba(240, 194, 12, 0.7)",
+                50,
+                "rgba(241, 128, 23, 0.6)",
+                90,
+                "rgba(249, 41, 41, 0.7)",
+            ],
+            // "circle-radius": 30,
+            "circle-radius": [
+                "step",
+                ["get", "no"],
+                0.5,
+                50,
+                3,
+                100,
+                5
+            ],
+            // 'circle-opacity': [
+            //     "step",
+            //     ["get", "no"],
+            //     0.01,
+            //     15,
+            //     0.1,
+            //     25,
+            //     0.1,
+            //     35,
+            //     0.1
+            // ],
+            // 'circle-blur': .5,
+            // "circle-stroke-width": 1,
+            // "circle-stroke-color": "#fff"
+        }
+    });
+
+
+});
+
+var popper = new mapboxgl.Popup({closeButton: false, closeOnClick: true});
+
+// Open popup on point click
+map.on('click', function (e) {
+   var features = map.queryRenderedFeatures(e.point, { layers: ['unclustered-point-bad', 'unclustered-point-good'] });
+
+   if (!features.length) {
+       return;
+   }
+
+   // Remove any open expoMarkers
+   expoMarker.remove();
+
+   // Find first feature
+   var feature = features[0];
+
+   // Set Popup and addTo Map
+   popper
+       .setLngLat(feature.geometry.coordinates)
+        .setHTML('<span><b>' + Math.round(feature.properties.no) + '</b><br>PPM NO2</span>')
+       .addTo(map);
+});
+
+// Set cursor as point when mouse is moving
+map.on('mousemove', function (e) {
+   var features = map.queryRenderedFeatures(e.point, { layers: ['unclustered-point-bad', 'unclustered-point-good'] });
+   map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+});
+
+
+
+
+
+
+//// Vanilla AJAX to read geojson object in parallel
+function ajax_get(url, callback) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            // console.log('responseText:' + xmlhttp.responseText);
+            try {
+                var data = JSON.parse(xmlhttp.responseText);
+            } catch(err) {
+                console.log(err.message + " in " + xmlhttp.responseText);
+                return;
+            }
+            callback(data);
+        }
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+
+
+////
+//// Sockets
+////
+
+var fanSpinning = false;
+
+// Get GeoJSON and Pass to Socket Server
+new Promise(function(resolve, reject) {
+    ajax_get('oak_out_v02.geojson', function(data) {
+        var results = data.features;
+        resolve(results);
+    });
+}).then(function(features) {
+    socket.emit('dataOut', features);
+});
+
+// Local instance of globalAgg from socket server
+var globalAgg = {};
+
+// Receive parsed GeoJSON
+socket.on('aggregate', function(data){
+    console.log("aggregate received");
+    globalAgg = data;
+});
+
+
+// Receive Button Down Event
+socket.on("ramp_up",function(data){
+    //turn fan up
+    fanSpinning = true;
+    checkFan();
+});
+
+// Receive Button Up Event
+socket.on("ramp_down",function(data){
+    //turn fan down
+    fanSpinning = false;
+    checkFan();
+});
+
+
+// Find Closest Value in Data
+function findClosest(array,num) {
+    var i=0;
+    var minDiff=1000;
+    var ans;
+    for(i in array){
+         var m=Math.abs(num - array[i].properties.no);
+         if(m<minDiff){
+                minDiff=m;
+                ans=array[i];
+            }
+      }
+    return ans;
+}
+
+var lastVal = [];
+var counter = 0;
+var interval;
+
+// On Button Press
+function rampUp(val) {
+    map.setPaintProperty('unclustered-point-bad', 'circle-opacity', 1);
+    map.setPaintProperty('unclustered-point-good', 'circle-opacity', 0);
+
+    // Remove any open expoMarkers
+    expoMarker.remove();
+    popper.remove();
+
+    // Counter while Ramping
+    clearInterval(interval);
+    interval = setInterval(function(){
+        counter += 1
+        console.log("ramping up", counter, val);
+        val += counter * 2;
+
+        setTimeout(function(){
+            drawMarkers(val);
+        }, 1000);
+
+    }, 1300 + counter);
+    // Store last counter val
+    lastVal.push(val);
+}
+
+// On Button Release
+function rampDown(val) {
+    clearInterval(interval);
+    counter = 0;
+
+    popper.remove();
+
+    // Swap Layer Opacity
+    map.setPaintProperty('unclustered-point-bad', 'circle-opacity', 0);
+    map.setPaintProperty('unclustered-point-good', 'circle-opacity', 1);
+}
+
+
+var expoMarker = new mapboxgl.Marker()
+
+function checkFan() {
+    console.log("check fan");
+
+    var top = globalAgg.top20
+    var upper = globalAgg.upper20
+    var mid = globalAgg.mid20
+    var bottom = globalAgg.bottom20
+
+    var ceilingVal = top[0].properties.no;
+    var baseVal = mid[10].properties.no;
+    var lowestVal = bottom[0].properties.no;
+
+    if (fanSpinning) {
+        console.log("fan spinning");
+        rampUp(baseVal);
+    } else {
+        console.log("fan stopping");
+        rampDown(lastVal[0]);
+    }
+}
+
+var linearOffset = Math.round(Math.sqrt(0.5 * Math.pow(100, 2)));
+
+function drawMarkers(closestVal) {
+    var matchedPoint = findClosest(globalAgg.full,closestVal);
+    var lat = matchedPoint.geometry.coordinates[1];
+    var lng = matchedPoint.geometry.coordinates[0];
+
+    expoMarker
+        .setLngLat([lng, lat])
+        // .addTo(map)
+        .setPopup(new mapboxgl.Popup({closeButton: false, closeOnClick: true, className: "fade-in", anchor: "bottom", offset:[0, -50]})
+            .setLngLat([lng, lat])
+            .setHTML('<span><b>' + Math.round(matchedPoint.properties.no) + '</b><br>PPM NO2</span>')
+            // .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+            .addTo(map))
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
