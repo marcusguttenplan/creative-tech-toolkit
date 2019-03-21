@@ -28,7 +28,7 @@ Includes:
 * iTerm2 terminal
 * java
 * LibreOffice
-* Postman
+* Postman (REST API request tester)
 * Quicklook utilities for `.md`, `.csv`, `.json` etc
 * Slack
 * Spectacle window manager

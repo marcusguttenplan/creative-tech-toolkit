@@ -34,6 +34,7 @@ sh ./Bootstrappers/mac/bootstrapper.sh
 ```
 .
 ├── bootstrappers
+|   ├── cloud-lab
 │   └── mac
 ├── dockerfiles
 │   ├── api-django
@@ -73,8 +74,7 @@ sh ./Bootstrappers/mac/bootstrapper.sh
 │   ├── python-face-recognition
 │   ├── tfjs
 │   │   ├── emotion
-│   │   ├── pose
-│   │   └── root
+│   │   └── pose
 │   └── vision
 ├── physical-computing
 │   ├── arduino-io

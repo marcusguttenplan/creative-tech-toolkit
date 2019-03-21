@@ -4,6 +4,8 @@ Repository for physical computing snippets
 
 ### Setup
 
+Install phidget manager from phidgets.com
+
 ```js
 npm i --save phidget22
 ```
