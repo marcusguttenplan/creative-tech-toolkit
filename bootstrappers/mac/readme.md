@@ -12,6 +12,31 @@ Install some useful CLI tools quickly with `brew` and install an entire workflow
 
 Install Adobe CC Desktop with `/usr/local/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.app`, and then install Adobe Apps.
 
+Includes:
+
+* 1password
+* Adobe CC
+* Alfred toolbar
+* AppCleaner
+* Atom
+* Bartender taskbar
+* Cyberduck FTP
+* Docker
+* Dropbox
+* Google Chrome
+* Google Cloud `gcloud` SDK
+* iTerm2 terminal
+* java
+* LibreOffice
+* Postman
+* Quicklook utilities for `.md`, `.csv`, `.json` etc
+* Slack
+* Spectacle window manager
+* Spotify
+* Unarchiver
+* Virtualbox VMs
+* Wireshark (for tcpdump)
+
 #### dev tools
 
 Some other useful stuff I always end up having to use.
@@ -33,7 +58,7 @@ Edit `utils/git/.gitconfig.example` `username` to be the generated Personal Acce
 #### atom text editor
 
 * Install packages and theme
-* Install 'photoshop for code' toolbar
+* Install 'photoshop for code' toolbar for Atom
 
 
 #### system settings

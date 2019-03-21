@@ -46,6 +46,7 @@ apps=(
     iterm2
     java
     libreoffice
+    postman
     qlcolorcode
     qlimagesize
     qlmarkdown
