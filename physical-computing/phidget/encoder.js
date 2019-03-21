@@ -1,10 +1,7 @@
 var phidget22 = require('phidget22');
 
+//// Connect to local Phidgets SERVER (not webserver)
 var conn = new phidget22.Connection(5661, 'localhost');
-
-conn.onConnect(function(d){
-    console.log("onConnect", d);
-})
 conn.connect().then(function(){
   console.log("phidget connected");
 }).catch(function(err){
