@@ -78,9 +78,6 @@ sh ./Bootstrappers/mac/bootstrapper.sh
 │   └── vision
 ├── physical-computing
 │   ├── arduino-io
-│   └── gpio
-├── physical-computing
-│   ├── arduino-io
 │   ├── phidget
 │   └── rpi
 ├── servers
@@ -88,7 +85,6 @@ sh ./Bootstrappers/mac/bootstrapper.sh
 │   ├── express-redis
 │   ├── express-socketio
 │   ├── express-sse
-│   └── rails.md
 │   └── rails.md
 ├── snippets
 │   ├── csv
