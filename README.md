@@ -53,6 +53,11 @@ sh ./Bootstrappers/mac/bootstrapper.sh
 │   ├── ui-vue
 │   └── web-nginx
 ├── gcp
+│   ├── appengine
+│   │   ├── node-server
+│   │   ├── pubsub-api
+│   │   ├── rails
+│   │   └── sockets
 │   ├── bigquery
 │   ├── cloud-functions
 │   │   ├── boilerplate
@@ -60,11 +65,9 @@ sh ./Bootstrappers/mac/bootstrapper.sh
 │   │   ├── slack
 │   │   └── storage
 │   ├── firebase
+│   ├── google-oauth.js
 │   ├── googleassist.md
-│   ├── k8s
-│   ├── node-server-appengine
-│   ├── pubsub-appengine
-│   └── sockets-appengine
+│   └── k8s
 ├── maps
 │   ├── gmaps
 │   └── osm
