@@ -1,8 +1,7 @@
 const GoogleSpreadsheet = require('google-spreadsheet');
 const async = require('async');
 const { IncomingWebhook } = require('@slack/client');
-// const url = process.env.SLACK_WEBHOOK_URL;
-const url = 'https://hooks.slack.com/services/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';
+const url = process.env.SLACK_WEBHOOK_URL;
 const webhook = new IncomingWebhook(url);
 
 
@@ -35,7 +34,7 @@ exports.contactForm = (req, res) => {
 
 
 
-    var doc = new GoogleSpreadsheet('1dcGBfS8VC0X16sqqXjC2Twgd4L3aFrMHKvIKlFwAK4Q');
+    var doc = new GoogleSpreadsheet('<sheet-id>');
     var sheet;
     var bodyData = {}
 

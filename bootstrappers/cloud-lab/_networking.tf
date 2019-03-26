@@ -34,18 +34,18 @@ resource "google_compute_firewall" "ssh" {
   source_ranges = ["0.0.0.0/0"]
 }
 
-resource "google_compute_firewall" "http" {
-  name    = "${google_compute_network.default.name}-firewall-http"
-  network = "default"
-
-  allow {
-    protocol = "tcp"
-    ports    = ["80"]
-  }
-
-  target_tags   = ["web"]
-  source_ranges = ["0.0.0.0/0"]
-}
+# resource "google_compute_firewall" "http" {
+#   name    = "${google_compute_network.default.name}-firewall-http"
+#   network = "default"
+#
+#   allow {
+#     protocol = "tcp"
+#     ports    = ["80"]
+#   }
+#
+#   target_tags   = ["web"]
+#   source_ranges = ["0.0.0.0/0"]
+# }
 # resource "google_compute_firewall" "https" {
 #   name    = "${google_compute_network.internal-net.name}-firewall-https"
 #   network = "${google_compute_network.internal-net.name}"
