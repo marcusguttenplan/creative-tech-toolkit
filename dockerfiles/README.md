@@ -1,23 +1,59 @@
-# Dockerfile
+# Dockerfiles
 
-Some useful baseline containers for scaling larger projects
+Some useful baseline containers for testing and scaffolding out new projects
 
-### Postgres
+### Django
 
-Spin up multiple databases in one container -- `dev`, `test`, and `prod` -- for use with backend services
+django API
 
-### Django + Postgres
+### Flask
 
-Docker-compose for connecting Django to Postgresql
+Tiny Flask server
+
+### Java
+
+boilerplate Java REST API that was used ONCE in a project
+
+### Node + Express
+
+Small node server
+
+### Rails
+
+rails API
+
+### Postgres Database
+
+Built for actually creating multiple databases in a single docker container, for Rails applications
+
+### Redis
+
+Lightweight nosql database
+
+### Go Service (SMTP)
+
+An SMTP mailer in Go, with a slim web server
+
+### PHP Service (SMTP)
+
+An SMTP mailer in PHP
+
+### Ruby Service (SMTP)
+
+An SMTP mailer in Ruby
+
+### React UI
+
+A containerized default React app
+
+### Static UI
+
+Super simple HTML UI in a container
+
+### Vue UI
+
+A containerized Vue hello-world app
 
 ### nginx
 
-Basic nginx image for interfacing with a back end server via namespaces
-
-### node-server
-
-Simple node server for interfacing with other namespaces
-
-### rails
-
-Reusable rails API that can interact with postgres and nginx
+Basic nginx load balancer for serving other containers
