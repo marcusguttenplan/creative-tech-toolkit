@@ -32,11 +32,11 @@ node server that uses firebase as a back end.
 
 #### Kubernetes
 
-Very basic `node` server and `nginx` setup for connecting services to each other via GKE or Knative (serverless containers)
+Collection of Dockerfiles that have been converted (with `kompose`) to kubernetes yamls. Useful for deploying fast. Lots of services.
 
 #### PubSub
 
-Simple `node` API for interacting with PubSub topics and subscriptions
+Simple `node` API for interacting with PubSub topics and subscriptions.
 
 #### App Engine
 
