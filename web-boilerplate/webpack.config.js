@@ -9,10 +9,6 @@ module.exports = {
         main: [
             'webpack-dev-server/client?http://localhost:3000/',
             './src/js/main.js'
-        ],
-        nav: [
-            'webpack-dev-server/client?http://localhost:3000/',
-            './src/js/nav.js'
         ]
     },
 
