@@ -45,7 +45,6 @@ apps=(
     google-cloud-sdk
     iterm2
     java
-    libreoffice
     postman
     qlcolorcode
     qlimagesize

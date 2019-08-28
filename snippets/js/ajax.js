@@ -20,6 +20,7 @@ function ajaxReq(method, url, options, callback) {
     xhr.setRequestHeader("data", JSON.stringify(options));
     xhr.send();
 }
+
 // Use a Promise to wait until Ajax request has finished
 new Promise(function(resolve, reject) {
     ajaxReq('GET', constUrl, options, function(data) {
@@ -39,6 +40,8 @@ $.ajax({
         console.log(data);
     }
 });
+
+
 
 
 // request.js

@@ -8,7 +8,7 @@
 #
 # ----------------------------------------------------------------------------
 
-HISTFILESIZE=5000
+HISTFILESIZE=25000
 
 # global color vars to make it easy to prettify
 RED='\033[01;31m'
@@ -456,7 +456,7 @@ ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the curr
 ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
 ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
 
-# alias search
+# bash alias search
 function getalias(){
 	read -e -p "Enter Phrase: " inputpath
 	grep -r  "$inputpath" ~/.bashrc

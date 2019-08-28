@@ -27,7 +27,6 @@ Includes:
 * Google Cloud `gcloud` SDK
 * iTerm2 terminal
 * java
-* LibreOffice
 * Postman (REST API request tester)
 * Quicklook utilities for `.md`, `.csv`, `.json` etc
 * Slack

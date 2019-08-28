@@ -10,10 +10,6 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
-## node version manager
-export NVM_DIR="$HOME/.nvm"
-    . "/usr/local/opt/nvm/nvm.sh"
-
 ## rbenv
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 eval "$(rbenv init -)"
@@ -21,6 +17,13 @@ eval "$(rbenv init -)"
 ## pyenv
 export PATH="$HOME/.pyenv:$PATH"
 eval "$(pyenv init -)"
+
+# nodenv
+eval "$(nodenv init -)"
+
+## node version manager
+export NVM_DIR="$HOME/.nvm"
+    . "/usr/local/opt/nvm/nvm.sh"
 
 ## updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/bin/google-cloud-sdk/path.bash.inc' ]; then source '/usr/local/bin/google-cloud-sdk/path.bash.inc'; fi
