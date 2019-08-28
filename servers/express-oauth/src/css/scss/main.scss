@@ -414,7 +414,48 @@ html {
     @include mq-xs() { font-size: 12px; }
 }
 
-nav {}
+nav {
+    display: flex;
+    .nav-left, .nav-right {
+        display: flex;
+        flex: 1;
+        padding: 5px;
+    }
+    .nav-right {
+        justify-content: flex-end;
+    }
+    a {
+        padding: 5px;
+        @include link($dg, $lg);
+    }
+}
+
+
 header{}
-main {}
+
+main {
+    width: 100vw; height: 100vh;
+    background-color: #515ffa;
+    overflow: hidden;
+
+    #votes {
+        position: absolute;
+        height: 15vh;
+        background-color: lighten(#6d79f9, 1);
+
+        color: #fff;
+
+        bottom: 0; right: 0; left: 0;
+        display: flex;
+        .section {
+            flex: 1;
+            padding: 15px 0 0;
+            border: 2px solid #515ffa;
+            .section-header {
+                text-align: center;
+            }
+        }
+    }
+}
+
 footer {}
