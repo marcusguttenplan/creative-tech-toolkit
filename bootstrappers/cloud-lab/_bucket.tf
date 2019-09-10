@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "data-store" {
-  name     = "catchall-bucket"
+  name     = "${var.instance-name-base}-blobstore"
   location = "US"
 
   website {
