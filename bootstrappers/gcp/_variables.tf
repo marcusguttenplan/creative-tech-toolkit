@@ -2,20 +2,21 @@
 ## Global Vars
 ##
 variable "gcloud-region" {
-  default = "us-west1-a"
+  default = "us-central1"
 }
 
 variable "gcloud-zone" {
-  default = "us-west1-a"
+  default = "us-central1-a"
 }
 
 variable "gcloud-project" {
-  default = "devlab-235506"
+  default = "next19-industry-media"
 }
 
 variable "instances" {
   default = ["dev", "prod", "bastion"]
 }
+
 
 
 
