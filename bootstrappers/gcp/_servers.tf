@@ -17,8 +17,9 @@ resource "google_compute_instance" "frontend" {
   }
 
   network_interface {
-    network = "default"
+    network = "${google_compute_network.default.name}"
     subnetwork = "${google_compute_subnetwork.default.name}"
+    # network = "${google_compute_subnetwork.default.name}"
     access_config {}
   }
 

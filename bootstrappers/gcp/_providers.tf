@@ -9,12 +9,13 @@ provider "google" {
 
 # List of APIs to Enable
 resource "google_project_services" "project" {
-  project = "${var.gcloud-project}"
+  # project = "${var.gcloud-project}"
   services = [
       "bigquery-json.googleapis.com",
       "compute.googleapis.com",
       "container.googleapis.com",
       "containerregistry.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
       "deploymentmanager.googleapis.com",
       "dns.googleapis.com",
       "logging.googleapis.com",
@@ -24,6 +25,8 @@ resource "google_project_services" "project" {
       "replicapool.googleapis.com",
       "replicapoolupdater.googleapis.com",
       "resourceviews.googleapis.com",
+      "servicemanagement.googleapis.com",
+      "servicenetworking.googleapis.com",
       "sql-component.googleapis.com",
       "sqladmin.googleapis.com",
       "storage-api.googleapis.com",

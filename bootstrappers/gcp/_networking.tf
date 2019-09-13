@@ -10,7 +10,7 @@ resource "google_compute_network" "default" {
 
 resource "google_compute_subnetwork" "default" {
   project                  = "${var.gcloud-project}"
-  name                     = "${var.network_name}"
+  name                     = "${var.network_name}-sub"
   ip_cidr_range            = "10.127.0.0/20"
   network                  = "${google_compute_network.default.self_link}"
   region                   = "${var.gcloud-region}"
@@ -18,13 +18,46 @@ resource "google_compute_subnetwork" "default" {
   depends_on = ["google_compute_network.default"]
 }
 
+resource "google_compute_global_address" "private_ip_address" {
+  name                     = "${google_compute_network.default.name}"
+  purpose                  = "VPC_PEERING"
+  address_type             = "INTERNAL"
+  prefix_length            = 16
+  network                  = "${google_compute_network.default.name}"
+}
+
+resource "google_service_networking_connection" "private_vpc_connection" {
+  network       = "${google_compute_network.default.name}"
+  service       = "servicenetworking.googleapis.com"
+  reserved_peering_ranges = ["${google_compute_global_address.private_ip_address.name}"]
+}
+
 ##
 ## Manage Firewall Rules
 ##
 
+resource "google_compute_firewall" "allow-internal" {
+  name    = "${var.network_name}-fw-allow-internal"
+  network = "${google_compute_network.default.name}"
+  allow {
+    protocol = "icmp"
+  }
+  allow {
+    protocol = "tcp"
+    ports    = ["0-65535"]
+  }
+  allow {
+    protocol = "udp"
+    ports    = ["0-65535"]
+  }
+  source_ranges = [
+    "${google_compute_subnetwork.default.ip_cidr_range}"
+  ]
+}
+
 resource "google_compute_firewall" "icmp" {
   name    = "${google_compute_network.default.name}-firewall-icmp"
-  network = "default"
+  network = "${google_compute_network.default.name}"
 
   allow {
     protocol = "icmp"
@@ -36,7 +69,7 @@ resource "google_compute_firewall" "icmp" {
 
 resource "google_compute_firewall" "ssh" {
   name    = "${google_compute_network.default.name}-firewall-ssh"
-  network = "default"
+  network = "${google_compute_network.default.name}"
 
   allow {
     protocol = "tcp"

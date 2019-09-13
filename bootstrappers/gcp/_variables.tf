@@ -10,7 +10,7 @@ variable "gcloud-zone" {
 }
 
 variable "gcloud-project" {
-  default = "next19-industry-media"
+  default = "next19-industry-healthcare"
 }
 
 variable "instances" {
