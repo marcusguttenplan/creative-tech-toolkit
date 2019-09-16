@@ -2,8 +2,8 @@
 provider "google" {
   # credentials = "${env.TF_CREDS}"
   credentials = "${file("./mguttenplan-creds.json")}"
-  project = "${var.gcloud-project}"
-  region = "${var.gcloud-region}"
+  project = "${var.project}"
+  region = "${var.region}"
 }
 
 

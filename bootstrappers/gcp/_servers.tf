@@ -5,7 +5,7 @@ resource "google_compute_instance" "frontend" {
   name = "${var.instance-name-base}"
 
   machine_type = "f1-micro"
-  zone = "${var.gcloud-zone}"
+  zone = "${var.zone}"
 
   tags = ["dev", "lab", "ssh", "internal"]
   # tags = ["prod", "ssh", "client", "<job no.>"]

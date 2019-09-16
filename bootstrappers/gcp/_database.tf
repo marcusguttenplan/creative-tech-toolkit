@@ -5,7 +5,7 @@
 resource "google_sql_database_instance" "psql-master" {
   name = "psql-master-y"
   database_version = "POSTGRES_9_6"
-  region = "${var.gcloud-region}"
+  region = "${var.region}"
 
   settings {
     tier = "db-f1-micro"
@@ -46,7 +46,7 @@ resource "google_sql_user" "psql-users" {
 # resource "google_sql_database_instance" "mysql-master" {
 #   name = "mysql-master-y"
 #   database_version = "MYSQL_5_7"
-#   region       = "${var.gcloud-region}"
+#   region       = "${var.region}"
 #
 #   settings {
 #     tier = "db-f1-micro"

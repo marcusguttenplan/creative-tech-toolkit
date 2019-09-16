@@ -1,23 +1,25 @@
 ##
 ## Global Vars
 ##
-variable "gcloud-region" {
+variable "region" {
   default = "us-central1"
 }
 
-variable "gcloud-zone" {
+variable "zone" {
   default = "us-central1-a"
 }
 
-variable "gcloud-project" {
-  default = "next19-industry-healthcare"
+variable "project" {
+  default = "<gcloud project name>"
 }
 
 variable "instances" {
   default = ["dev", "prod", "bastion"]
 }
 
-
+variable "env" {
+  type = "string"
+}
 
 
 ##

@@ -3,17 +3,17 @@
 ##
 
 resource "google_compute_network" "default" {
-  project                 = "${var.gcloud-project}"
+  project                 = "${var.project}"
   name                    = "${var.network_name}"
   auto_create_subnetworks = false
 }
 
 resource "google_compute_subnetwork" "default" {
-  project                  = "${var.gcloud-project}"
+  project                  = "${var.project}"
   name                     = "${var.network_name}-sub"
   ip_cidr_range            = "10.127.0.0/20"
   network                  = "${google_compute_network.default.self_link}"
-  region                   = "${var.gcloud-region}"
+  region                   = "${var.region}"
   private_ip_google_access = true
   depends_on = ["google_compute_network.default"]
 }
