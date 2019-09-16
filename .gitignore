@@ -1,9 +1,9 @@
 creds.json
 credentials.json
+credentials*
 node_modules/
 .env
 .env.development
 .env.production
 *.tfstate
 .terraform
-
