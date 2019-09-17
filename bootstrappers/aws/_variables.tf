@@ -1,3 +1,6 @@
+##
+## Global Vars
+##
 variable "project" {
   default = "<aws project name>"
 }
@@ -12,4 +15,12 @@ variable "profile" {
 
 variable "env" {
   type = "string"
+}
+
+
+##
+## Compute Vars
+##
+variable "instance-name-base" {
+  default = "sparks-interactive"
 }

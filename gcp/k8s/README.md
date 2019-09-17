@@ -227,9 +227,8 @@ minikube service <name> --url
 Enables kubernetes API [https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=next19-hybrid-cloud-csp]
 
 ```sh
-gcloud beta container clusters create csp-city-test --project=$PROJECT_ID \
+gcloud beta container clusters create csp-city --project=$PROJECT_ID \
     --addons=Istio --istio-config=auth=MTLS_STRICT \
-    --cluster-version=1.11.6-gke.6 \
     --machine-type=n1-standard-2 \
     --num-nodes=4 \
     --zone=us-west1-a
