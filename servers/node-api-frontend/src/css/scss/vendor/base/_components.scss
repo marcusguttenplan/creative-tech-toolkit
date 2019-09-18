@@ -1,0 +1,289 @@
+@import "media-queries";
+/* responsive tables */
+table {
+  width: 100%;
+  th,
+  td {
+    padding: 5px;
+    text-align: left;
+  }
+  th {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+  }
+}
+
+
+/* Block Buttons and Ghost Buttons */
+@mixin btn($background, $color) {
+  border: 3px solid rgba(255,255,255,0); // You'll want to customize this
+  color: $color;
+  background: $background;
+  &:hover, &:focus, &:active {
+    color: $background;
+    background: $color;
+    border-color: $background;
+  }
+  &.-hollow {
+    background: none;
+    color: $background;
+    border: 3px solid $background; // The thickness should correspond with the thickness set above
+    &:hover, &:focus, &:active {
+      color: $color;
+      background: $background;
+    }
+  }
+}
+
+
+/* Triangles */
+@mixin triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+
+
+/* Navbar */
+// Navigation Variables
+$content-width: 100%;
+// $breakpoint: 800px;
+$nav-height: 70px;
+$nav-background: #262626;
+$nav-font-color: #ffffff;
+$link-hover-color: #2581DC;
+
+
+
+
+// Navigation
+nav {
+  // float: right;
+  // Outer navigation wrapper
+  .navigation {
+    height: $nav-height;
+    background: $nav-background;
+
+    // Logo and branding
+    .brand {
+      position: absolute;
+      padding-left: 20px;
+      float: left;
+      line-height: $nav-height;
+      text-transform: uppercase;
+      font-size: 1.4em;
+      a,
+      a:visited {
+        color: $nav-font-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Container with no padding for navbar
+  .nav-container {
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      position: relative;
+      a,
+      a:visited {
+        display: block;
+        padding: 0 20px;
+        line-height: $nav-height;
+        background: $nav-background;
+        color: $nav-font-color;
+        text-decoration: none;
+        &:hover {
+          background: $link-hover-color;
+          color: $nav-font-color;
+        }
+        &:not(:only-child):after {
+          padding-left: 4px;
+          content: ' ▾';
+        }
+      } // Dropdown list
+      ul li {
+        min-width: 190px;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Dropdown list binds to JS toggle event
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+
+// Binds to JS Toggle
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $nav-background;
+  height: $nav-height;
+  width: $nav-height;
+}
+@include mq($max-width: 36rem) {
+  // Hamburger nav visible on mobile only
+  .nav-mobile {
+    display: block;
+    z-index: 999;
+  }
+  .nav-container {
+      position: relative;
+      top: 0;
+  }
+  nav#inner {
+   width: 100%;
+   top: 0;
+    padding: $nav-height 0 15px;
+    ul {
+      display: none;
+      li {
+        float: none;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+        ul li a {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .nav-dropdown {
+    position: static;
+  }
+}
+@include mq($min-width: 36rem) {
+  .nav-list {
+    display: block !important;
+    float: right;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  span,
+  span:before,
+  span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: $nav-font-color;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+  span:before {
+    top: -10px;
+  }
+  span:after {
+    bottom: -10px;
+  }
+  &.active span {
+    background-color: transparent;
+    &:before,
+    &:after {
+      top: 0;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+
+/* Dropdown */
+.dropdown {margin-top:15px;}
+.dropdown ul {
+	list-style:none;
+	position:relative;
+	float:left;
+    display: block;
+	margin:0;
+	padding:0
+}
+.dropdown ul a {
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+.dropdown ul li {
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+.dropdown ul li.current-menu-item {background:#ddd}
+.dropdown ul li:hover {background:#f6f6f6;}
+.dropdown ul ul {
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0
+}
+.dropdown ul li ul {background: #ffffff;}
+.dropdown ul ul li {float:none; width:200px;}
+.dropdown ul ul a {line-height:120%; padding:10px 15px}
+.dropdown ul ul ul {top:0; left:100%}
+.dropdown ul li:hover > ul{display:block;}

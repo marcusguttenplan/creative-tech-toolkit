@@ -1,0 +1,70 @@
+/* calculate rem and provide px fallback */
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/* word-wrap and ellipsis */
+@mixin word-wrap() {
+  word-break:     break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens:    auto;
+  hyphens:         auto;
+}
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* anti alias */
+@mixin antialias {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* responsive type */
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  @if $fallback {
+    font-size: $fallback;
+  }
+  font-size: $responsive;
+}
+
+/* import font */
+@mixin font($fontFamilyName, $fileName, $weight: normal, $style: normal) {
+@font-face {
+    font-family: $fontFamilyName;
+    font-weight: $weight;
+    font-style: $style;
+        //IE9 Compatibility Mode
+        src: url('/fonts/#{$fontFamilyName}/#{$fileName}.eot');
+        //IE6-IE8
+        src: url('/fonts/#{$fontFamilyName}/#{$fileName}.eot?#iefix') format('embedded-opentype'),
+             //Super Modern Browsers
+             url('/fonts/#{$fontFamilyName}/#{$fileName}.woff2') format('woff2'),
+             //Majority of Modern Browsers
+             url('/fonts/#{$fontFamilyName}/#{$fileName}.woff') format('woff'),
+             //Safari, Android, iOS
+             url('/fonts/#{$fontFamilyName}/#{$fileName}.ttf') format('truetype'),
+             //Legacy iOS
+             url('/fonts/#{$fontFamilyName}/#{$fileName}.svg##{$fileName}') format('svg');
+    }
+}
