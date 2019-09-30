@@ -4,10 +4,6 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const http = require('http');
 const cors = require('cors');
-
-// photo upload decarlations
-const multer = require("multer");
-const gm = require("gm").subClass({imageMagick: true});
 const fs = require("fs");
 const uuidv4 = require("uuid/v4");
 path = require("path");
