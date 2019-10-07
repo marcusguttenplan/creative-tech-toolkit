@@ -4,9 +4,6 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const http = require('http');
 const cors = require('cors');
-const fs = require("fs");
-const uuidv4 = require("uuid/v4");
-path = require("path");
 
 // dotenv declaration
 const dotenv = require('dotenv');
