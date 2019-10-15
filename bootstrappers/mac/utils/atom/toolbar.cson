@@ -1,345 +1,3 @@
-# # This file is used by Flex Tool Bar to create buttons on your Tool Bar.
-# # For more information how to use this package and create your own buttons,
-# #   read the documentation on https://atom.io/packages/flex-tool-bar
-#
-# # [
-# #   {
-# #     type: "button"
-# #     icon: "gear"
-# #     callback: "flex-tool-bar:edit-config-file"
-# #     tooltip: "Edit Tool Bar"
-# #   }
-# #   {
-# #     type: "spacer"
-# #   }
-# # ]
-#
-# [
-#     {
-#         type: "button"
-#         iconset: "mdi"
-#         icon: "file-tree"
-#         callback: "tree-view:toggle"
-#         tooltip: "Toggle Project Tree"
-#         style:
-#             color: "#68D89B"
-#     }
-#     {
-#         type: "button"
-#         icon: "folder-plus"
-#         iconset: "mdi"
-#         callback: "application:add-project-folder"
-#         tooltip: "Open Project"
-#         style:
-#             color: "#68D89B"
-#     }
-#     {
-#         type: "button"
-#         icon: "page-add"
-#         callback: "application:new-file"
-#         tooltip: "New File"
-#         iconset: "fi"
-#         style:
-#             color: "#68D89B"
-#     }
-#     # {
-#     #   type: "button"
-#     #   iconset: "fa"
-#     #   icon: "columns"
-#     #   tooltip: "Split Screen"
-#     #   callback: ["pane:split-right"]
-#     # }
-#     {
-#         type: 'button'
-#         tooltip: 'Split screen - Horizontally'
-#         callback: 'pane:split-right'
-#         icon: 'columns'
-#         iconset: 'fa'
-#         style:
-#             color: "#68D89B"
-#     }
-#     {
-#         type: 'button'
-#         tooltip: 'Split screen - Vertically'
-#         callback: 'pane:split-down'
-#         iconset: 'fa'
-#         icon: 'columns'
-#         style:
-#             transform:"rotate(270deg)"
-#             color: "#68D89B"
-#     }
-#
-#     {
-#         type: "spacer"
-#     }
-#
-#     {
-#         type: "button"
-#         iconset: "mdi"
-#         icon: "cloud-outline"
-#         callback: "remote-ftp:toggle"
-#         tooltip: "toggle ftp"
-#         style:
-#             color: "#5090d9"
-#     }
-#     # remote-ftp
-#     {
-#         type: "button"
-#         iconset: "mdi"
-#         icon: "cloud-outline-off"
-#         callback: "remote-ftp:disconnect"
-#         tooltip: "disconnect ftp"
-#         style:
-#             color: "#5090d9"
-#     }
-#     {
-#         type: "button"
-#         iconset: "mdi"
-#         icon: "code-braces"
-#         callback: "atom-beautify:beautify-editor"
-#         tooltip: "Atom Beautify"
-#         mode: "atom-text-editor"
-#         style:
-#             color: "#5090d9"
-#     }
-#     {
-#         type: "button"
-#         iconset: "devicon"
-#         icon: "gulp-plain"
-#         callback: "gulp-control:toggle"
-#         tooltip: "Gulp Control"
-#         mode: "atom-text-editor"
-#         style:
-#             color: "#5090d9"
-#     }
-#     {
-#         type: "button"
-#     #   iconset:"mdi"
-#         icon: "plug"
-#         callback: "rest-client:show"
-#         tooltip: "REST API client"
-#         style:
-#             color: "#5090d9"
-#     }
-#     {
-#         type: "button"
-#     #   iconset:"mdi"
-#         icon: "bug"
-#         callback: "node-debugger:toggle-debugger"
-#         tooltip: "nodejs debugger"
-#         style:
-#             color: "#5090d9"
-#     }
-#     {
-#         type: "button"
-#         iconset: "ion"
-#         icon: "ionic"
-#         callback: "processing:run"
-#         tooltip: "Run Processing"
-#         mode: "atom-text-editor"
-#         style:
-#             color: "#5090d9"
-#     }
-#     {
-#         type: "button"
-#         icon: "terminal"
-#         callback: "term3:open-split-down"
-#         tooltip: "Open Shell"
-#         mode: "atom-text-editor"
-#         style:
-#             color: "#5090d9"
-#     }
-#     {
-#         type: "spacer"
-#     }
-#     {
-#         type: "button"
-#         icon: "repo-pull"
-#         callback: "git-plus:pull"
-#         tooltip: "Git Pull"
-#         style:
-#             color: "#fff6b9"
-#     }
-#     {
-#         type: "button"
-#         icon: "git-commit"
-#         callback: "git-plus:add-all-commit-and-push"
-#         tooltip: "Git Add, Commit, Push"
-#         style:
-#             color: "#fff6b9"
-#     }
-#     {
-#         type: "button"
-#         icon: "git-branch"
-#         callback: "git-plus:new-branch"
-#         tooltip: "Git Branch"
-#         style:
-#             color: "#fff6b9"
-#             transform: "scale(1, -1)"
-#     }
-#     {
-#         type: "button"
-#         icon: "git-merge"
-#         callback: "git-plus:merge"
-#         tooltip: "Git Merge"
-#         style:
-#             color: "#fff6b9"
-#             transform: "scale(-1, 1)"
-#     }
-#     {
-#         type: "button"
-#         icon: "git-compare"
-#         callback: "git-plus:diff"
-#         tooltip: "Git Diff"
-#         style:
-#             color: "#fff6b9"
-#     }
-#     {
-#         type: "button"
-#         iconset: "mdi"
-#         icon: "vector-difference"
-#         callback: "merge-conflicts:detect"
-#         tooltip: "Check Merge Conflicts"
-#         style:
-#             color: "#fff6b9"
-#     }
-#     {
-#         type: "button"
-#         icon: "hammer"
-#         iconset: "ion"
-#         callback: "git-plus:rebase"
-#         tooltip: "Git Rebase"
-#         style:
-#             color: "#fff6b9"
-#     }
-#     {
-#         type: "button"
-#         icon: "pencil"
-#         iconset: "fa"
-#         callback: "git-plus:stash-save"
-#         tooltip: "Git stash"
-#         style:
-#             color: "#fff6b9"
-#     }
-#     {
-#         type: "button"
-#         iconset: "devicon"
-#         icon: "git-plain"
-#         callback: "git-plus:menu"
-#         tooltip: "Git"
-#         style:
-#             color: "#fff6b9"
-#     }
-#     {
-#         type: "spacer"
-#     }
-#     {
-#         type: "button"
-#         icon: "markdown"
-#         callback: "markdown-preview:toggle"
-#         tooltip: "Markdown Preview"
-#         style:
-#             color: "#E5A87E"
-#     }
-#     {
-#         type: "button"
-#         iconset:"mdi"
-#         icon: "sort-alphabetical"
-#         callback: "sort-lines:sort"
-#         tooltip: "Sort Lines"
-#         style:
-#             color: "#E5A87E"
-#     }
-#     {
-#         type: 'button'
-#         tooltip: 'Collapse All'
-#         callback: 'editor:fold-all'
-#         icon: 'level-up'
-#         iconset: 'fa'
-#         style:
-#             color: "#E5A87E"
-#     }
-#     {
-#         type: 'button'
-#         tooltip: 'Expand All'
-#         callback: 'editor:unfold-all'
-#         icon: 'level-down'
-#         iconset: 'fa'
-#         style:
-#             color: "#E5A87E"
-#     }
-#     {
-#         type: "button"
-#         icon: "browser"
-#         callback: "browser-plus:open"
-#         tooltip: "Open File in Browser-Plus"
-#         mode: "atom-text-editor"
-#         style:
-#             color: "#E5A87E"
-#     }
-#     {
-#         type: "url"
-#         iconset: "mdi"
-#         icon: "numeric-1-box-multiple-outline"
-#         url: "http://localhost:3000"
-#         tooltip: "Launch localhost:3000"
-#         style:
-#             color: "#E5A87E"
-#     }
-#     {
-#         type: "url"
-#         iconset: "mdi"
-#         icon: "numeric-2-box-multiple-outline"
-#         url: "http://localhost:8000"
-#         tooltip: "Launch localhost:8000"
-#         style:
-#             color: "#E5A87E"
-#     }
-#     {
-#         type: "spacer"
-#     }
-#     {
-#         type: "button"
-#         icon: "ellipsis"
-#         callback: "flex-tool-bar:edit-config-file"
-#         tooltip: "Edit Tool Bar"
-#     }
-# ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# This file is used by Flex Tool Bar to create buttons on your Tool Bar.
-# For more information how to use this package and create your own buttons,
-#   read the documentation on https://atom.io/packages/flex-tool-bar
-
-# [
-#   {
-#     type: "button"
-#     icon: "gear"
-#     callback: "flex-tool-bar:edit-config-file"
-#     tooltip: "Edit Tool Bar"
-#   }
-#   {
-#     type: "spacer"
-#   }
-# ]
-
 [
     ##########
     #
@@ -401,12 +59,6 @@
     #  DEV
     #
     ##########
-    {
-        type: "spacer"
-    }
-    {
-        type: "spacer"
-    }
     {
         type: "spacer"
     }
@@ -482,7 +134,7 @@
     {
         type: "button"
         iconset: "ion"
-        icon: "ionic"
+        icon: "logo-ionic"
         callback: "processing:run"
         tooltip: "Run Processing"
         mode: "atom-text-editor"
@@ -519,13 +171,6 @@
     {
         type: "spacer"
     }
-    {
-        type: "spacer"
-    }
-    {
-        type: "spacer"
-    }
-
 
     {
         type: "button"
@@ -578,7 +223,7 @@
     }
     {
         type: "button"
-        icon: "hammer"
+        icon: "md-hammer"
         iconset: "ion"
         callback: "git-plus:rebase"
         tooltip: "Git Rebase"
@@ -611,12 +256,6 @@
     #  WRITING
     #
     ##########
-    {
-        type: "spacer"
-    }
-    {
-        type: "spacer"
-    }
     {
         type: "spacer"
     }
@@ -655,15 +294,6 @@
         style:
             color: "#fff6b9"
     }
-    # {
-    #     type: "button"
-    #     icon: "browser"
-    #     callback: "browser-plus:open"
-    #     tooltip: "Open File in Browser-Plus"
-    #     mode: "atom-text-editor"
-    #     style:
-    #         color: "#fc533e"
-    # }
     {
         type: "url"
         iconset: "mdi"
@@ -682,22 +312,14 @@
         style:
             color: "#fff6b9"
     }
-
-
-
-
-
     {
         type: "spacer"
     }
-
     {
         type: "button"
         icon: "ellipsis"
         callback: "flex-tool-bar:edit-config-file"
         tooltip: "Edit Tool Bar"
-        # style:
-        #     color: "#fff6b9"
     }
 
 
