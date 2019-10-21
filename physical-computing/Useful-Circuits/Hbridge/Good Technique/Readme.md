@@ -22,7 +22,7 @@ An Hbridge is more of a concept than a specific circuit, any number of things ca
 
 In most applications, transistors are used as the switches in these circuits.
 
-There are several off the shelf Hbridge ICs; in single, double, or even quadruple packages to control multiple outputs. the most common are:  L293D (dual hbridge), SN754410N (quad Hbridge)
+There are several off the shelf Hbridge ICs in single, double, or even quadruple packages to control multiple outputs. the most common are:  L293D (dual hbridge), SN754410N (quad Hbridge)
 
 
 
