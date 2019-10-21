@@ -4,14 +4,14 @@ Taken from https://www.rugged-circuits.com/
 
 
 **Use Case and Warnings:**
-This is used on all the rugged-circuits boards as a way to protect I/O pins from overvolting, shorting to ground, and shorting to each-other.
+This is used on all the rugged-circuits(tm?) boards as a way to protect I/O pins from overvolting, shorting to ground, and shorting to each-other.
 
-the resettable (PTC) fuse has internal resistanc. This means you may not need a limiting resistor for powering led's.
+the resettable (PTC) fuse has internal resistance. This means you may not need a limiting resistor for powering led's.
 
 
 **What this circuit does:**
 
-A 5.1 Volt reverse biased zener diode protects from overvolting (up to 24V) while a resettable fuse protects from current spikes and shorting.
+A 5.1 Volt reverse-biased Zener diode protects from overvolting (up to 24V) while a resettable fuse protects from current spikes and shorting.
 
 
 **Key Parts:**
