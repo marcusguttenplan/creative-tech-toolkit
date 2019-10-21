@@ -4,7 +4,7 @@ Title:
 
 **Use Case:**
 
-These circuits are often used to allow DC motors to run forward or backward, with a saperated power source.
+These circuits are often used to allow DC motors to run forward or backward, with a seperated power source.
 
 Also useful for any application where changing the direction of current is helpful (Solenoids, bi-color Leds, etc.)
 
