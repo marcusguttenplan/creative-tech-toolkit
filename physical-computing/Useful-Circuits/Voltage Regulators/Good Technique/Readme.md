@@ -7,7 +7,7 @@ Linear Voltage Regulators
 Use these when the input voltage is higher than the required voltage.
 
 Linear regulators are cheap, simple, and responsive. their only disadvantage is that they are inefficient. This can cause them to get
- hot, so adequate heatsinking is a good idea in most applications.
+ hot, so adequate heatsinking is a good idea in any high-load applications.
 
  Some linear voltage regulators have a set output voltage, others have a variable output voltage that can be controlled via a variable resistor.
  
