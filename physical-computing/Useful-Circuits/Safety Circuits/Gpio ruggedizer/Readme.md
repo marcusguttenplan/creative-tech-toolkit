@@ -19,6 +19,8 @@ The resettable (PTC) fuse has internal resistance. This means you may not need a
 
 A 5.1 Volt reverse-biased Zener diode protects from overvolting (up to 24V) while a resettable fuse protects from current spikes and shorting.
 
+![](am010_iopinmodel.gif)
+
 
 **Key Parts:**
 
