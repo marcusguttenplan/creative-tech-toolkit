@@ -15,7 +15,7 @@ SN754410
 
 
 
-**quick tip**
+**quick tip:**
 
 If you keep blowing out your ICs you can build a 3D IC that doubles the current it can handle: (This probably shouldnt be in the &quot;good technique&quot; folder.)
 
