@@ -15,8 +15,7 @@ Switches of other mechanical inputs often can have a lot of &#39;noise&#39;. Ele
 **What this circuit does:**
 
 We can Debounce digital inputs, like buttons, in a lot of different ways. The most comprehensive of which is with a **schmitt trigger** :
-
-      a Schmitt trigger is a logic input type that provides hysteresis or two different threshold voltage levels for rising and falling edge.  [https://en.wikipedia.org/wiki/Schmitt\_trigger](https://en.wikipedia.org/wiki/Schmitt_trigger)
+ a Schmitt trigger is a logic input type that provides hysteresis or two different threshold voltage levels for rising and falling edge.  https://en.wikipedia.org/wiki/Schmitt\_trigger](https://en.wikipedia.org/wiki/Schmitt_trigger
 
 ![](https://howtomechatronics.com/wp-content/uploads/2015/08/Schmitt-Trigger-Symbol-300x127.png)
 
