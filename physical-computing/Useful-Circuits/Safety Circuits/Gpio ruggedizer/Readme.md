@@ -6,6 +6,8 @@ Taken from https://www.rugged-circuits.com/
 
 
 
+
+
 **Use Case and Warnings:**
 
 This is used on all the rugged-circuits(tm?) boards as a way to protect I/O pins from overvolting, shorting to ground, and shorting to each-other.
