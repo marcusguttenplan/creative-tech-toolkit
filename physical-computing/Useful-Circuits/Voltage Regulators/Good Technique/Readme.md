@@ -24,8 +24,11 @@ Additional electrolytic capacitors can be used in parallel to these for smoothin
 **Key Parts:**
 
 LD1117V33 (+3.3V, 800mA)
+
 L7805 (+5 Volt, 1.5A)
+
 L7812 (+12 Volt, 1.5A)
+
 LM317 (Variable Voltage from 1.2V to 37V, 1.5A)
 
 TO-220 (Heatsink, 2.5W dissipation)
