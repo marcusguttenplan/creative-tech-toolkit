@@ -1,6 +1,9 @@
 Title:
+
 **GPIO pin ruggedizer**
+
 Taken from https://www.rugged-circuits.com/
+
 
 
 **Use Case and Warnings:**
