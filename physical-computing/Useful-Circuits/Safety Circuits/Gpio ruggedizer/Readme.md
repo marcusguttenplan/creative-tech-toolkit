@@ -19,6 +19,7 @@ A 5.1 Volt reverse-biased Zener diode protects from overvolting (up to 24V) whil
 
 
 **Key Parts:**
+
 1N4733A   5.1V Zener Diode
 
 300ma/200ohm (or closest possible) PTC- Sparkfun sells this one: https://www.sparkfun.com/products/8357
