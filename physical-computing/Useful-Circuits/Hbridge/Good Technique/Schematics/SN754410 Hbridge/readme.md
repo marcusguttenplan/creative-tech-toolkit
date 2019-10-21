@@ -17,6 +17,6 @@ SN754410
 
 **quick tip:**
 
-If you keep blowing out your ICs you can build a 3D IC that doubles the current it can handle: (This probably shouldnt be in the &quot;good technique&quot; folder.)
+If you keep blowing out your ICs you can build a fake 3D IC that (almost maybe) doubles the current it can handle: (This probably shouldnt be in the &quot;good technique&quot; folder.)
 
 ![](https://eda360insider.files.wordpress.com/2011/11/128kbit-stacked-dram.jpg?w=640)
