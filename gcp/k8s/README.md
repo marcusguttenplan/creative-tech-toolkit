@@ -1,19 +1,4 @@
-# CSP City
-#### Department of Istio
-
-### Concept
-
-Cloud Services Platform City is a metaphor encompassing CSP with Kubernetes and Istio into a physical city. Kubernetes is represented by the city’s boroughs with each borough representing a cluster (some on-premises and some in the cloud), which required standardization as it expands and adds new boroughs. Istio is represented by the travel system traversing all neighborhoods of the city.
-
-This will be a tabletop display with four surrounding monitors. The physical display will consist of four “boroughs”, each represented by a different Kubernetes cluster. Two will be GKE On-Prem (potentially via GKE On-Prem Developer Edition) and two will be running in GKE.
-
-Each borough will be accompanied by a monitor displaying real Kubernetes & Istio configuration. Two monitors will be focused on GKE & GKE On-Prem features, two monitors will be focused on Istio and CSM features.
-
-### Prototype
-
-**City Services:**
-* Bank
-* Warehouse
+# Kubernetes Deployments
 
 ## Setup
 
