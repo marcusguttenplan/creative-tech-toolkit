@@ -41,8 +41,8 @@ func main() {
   println("Mailer Launched!")
   config := mailer.Config{
     Host: "smtp.gmail.com",
-    Username: "testaccount@sparksonline.com",
-    Password: "3SFosBUt",
+    Username: "<email address>",
+    Password: "<password>",
     FromAddr: "testaccount@sparksonline.com",
     Port: 587,
   }
@@ -59,7 +59,7 @@ func main() {
   if err != nil {
     println("error!!!: " + err.Error())
   }
-  
+
 
   http.HandleFunc("/", handler)
   log.Fatal(http.ListenAndServe(":6060", nil))

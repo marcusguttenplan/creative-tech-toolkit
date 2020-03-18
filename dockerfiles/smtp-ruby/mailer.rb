@@ -2,14 +2,14 @@ require 'mail'
 
 options = { :address              => "smtp.gmail.com",
             :port                 => 587,
-            :user_name            => 'testaccount@sparksonline.com ',
-            :password             => '3SFosBUt',
+            :user_name            => '<email address>',
+            :password             => '<password>',
             :authentication       => 'plain',
             :enable_starttls_auto => true  }
 
 mail = Mail.new do
-  from    'testaccount@sparksonline.com'
-  to      'mguttenplan@wearesparks.com'
+  from    '<email address>'
+  to      '<email address>'
   subject 'Welcome'
   body    'Welcome to the Life of your Code'
 end

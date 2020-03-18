@@ -2,8 +2,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 require "/usr/lib/vendor/autoload.php";
 
-$username = "testaccount@sparksonline.com";
-$password = "3SFosBUt";
+$username = "<email address>";
+$password = "<password>";
 
 // Relay SMTP service configuration
 $host = 'smtp.gmail.com';
