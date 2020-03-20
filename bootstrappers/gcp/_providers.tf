@@ -1,7 +1,7 @@
 # Specify whether to use GCP, Azure, AWS, etc. We will use GCP.
 provider "google" {
   # credentials = "${env.TF_CREDS}"
-  credentials = "${file("./mguttenplan-creds.json")}"
+  credentials = "${file("./creds.json")}"
   project = "${var.project}"
   region = "${var.region}"
 }
