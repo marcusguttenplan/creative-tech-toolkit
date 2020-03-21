@@ -1,16 +1,16 @@
-resource google_sourcerepo_repository image {
-  name       = "paas-monitor"
+resource "google_sourcerepo_repository" "repo" {
+  name       = "${var.repo}"
   depends_on = [google_project_service.sourcerepo]
 }
 
 
-resource google_sourcerepo_repository_iam_policy image {
-  project     = google_sourcerepo_repository.image.project
-  repository  = google_sourcerepo_repository.image.name
-  policy_data = data.google_iam_policy.image.policy_data
+resource "google_sourcerepo_repository_iam_policy" "repo" {
+  project     = google_sourcerepo_repository.repo.project
+  repository  = google_sourcerepo_repository.repo.name
+  policy_data = data.google_iam_policy.repo.policy_data
 }
 
-data google_iam_policy image {
+data "google_iam_policy" "image" {
   binding {
     role    = "roles/source.reader"
     members = []
@@ -21,10 +21,10 @@ data google_iam_policy image {
     members = ["user:${var.email}"]
   }
 
-  binding {
-    role = "roles/source.admin"
-    members = [
-      "serviceAccount:${data.google_project.current.number}@cloudbuild.gserviceaccount.com",
-    ]
-  }
+  # binding {
+  #   role = "roles/source.admin"
+  #   members = [
+  #     "serviceAccount:${data.google_project.current.number}@cloudbuild.gserviceaccount.com",
+  #   ]
+  # }
 }

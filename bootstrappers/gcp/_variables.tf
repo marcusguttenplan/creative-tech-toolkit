@@ -5,12 +5,9 @@ variable "region" {
   default = "us-central1"
 }
 
-variable "zone" {
-  default = "us-central1-a"
-}
 
 variable "project" {
-  default = "<gcloud project name>"
+  default = "next18-industrysolutions-trax"
 }
 
 variable "instances" {
@@ -18,6 +15,7 @@ variable "instances" {
 }
 
 variable "env" {
+  default="dev"
   type = "string"
 }
 
