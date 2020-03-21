@@ -21,6 +21,14 @@ variable "env" {
   type = "string"
 }
 
+variable "repo" {
+  default = "sandbox"
+}
+
+variable "email" {
+  default = "mguttenplan@wearesparks.com"
+}
+
 
 ##
 ## Compute Vars

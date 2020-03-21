@@ -1,0 +1,12 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args: ["fetch", "--unshallow", "--tags"]
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: make
+    args:
+      - REGISTRY_HOST=gcr.io
+      - USERNAME=${PROJECT_ID}
+      - snapshot
+
+
+      # args: ['build', '-t', 'gcr.io/my-project/my-image', '.']
