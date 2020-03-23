@@ -8,19 +8,18 @@ provider "google" {
 
 
 # List of APIs to Enable
-resource "google_project_services" "project" {
-  # project = "${var.gcloud-project}"
-  services = [
-      "bigquery-json.googleapis.com",
+resource "google_project_service" "service" {
+  for_each = toset([
+      "cloudresourcemanager.googleapis.com",
+      "oslogin.googleapis.com",
       "compute.googleapis.com",
       "container.googleapis.com",
       "containerregistry.googleapis.com",
-      "cloudresourcemanager.googleapis.com",
+      "cloudbuild.googleapis.com",
       "deploymentmanager.googleapis.com",
       "dns.googleapis.com",
       "logging.googleapis.com",
       "monitoring.googleapis.com",
-      "oslogin.googleapis.com",
       "pubsub.googleapis.com",
       "replicapool.googleapis.com",
       "replicapoolupdater.googleapis.com",
@@ -30,5 +29,10 @@ resource "google_project_services" "project" {
       "sql-component.googleapis.com",
       "sqladmin.googleapis.com",
       "storage-api.googleapis.com",
-    ]
+    ])
+
+  service = each.key
+
+  project = "${var.project}"
+  disable_on_destroy = false
 }

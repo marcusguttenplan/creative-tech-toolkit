@@ -3,9 +3,9 @@
 ##
 
 resource "google_dns_managed_zone" "preview-dns-zone" {
-  name        = "sparks-interactive-zone"
-  dns_name    = "sparks-interactive.com."
-  description = "sparks-interactive.com DNS zone"
+  name        = "sparkscreativetech-zone"
+  dns_name    = "sparkscreativetech.com."
+  description = "sparkscreativetech.com DNS zone"
 }
 
 resource "google_dns_record_set" "preview-dns-record" {
