@@ -1,0 +1,9 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args: ["fetch", "--unshallow", "--tags"]
+    args: ['build', '-t', 'gcr.io/$REPO_NAME/$REPO_NAME', '.']
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - REGISTRY_HOST=gcr.io
+      - USERNAME=$REPO_NAME
+      - snapshot
