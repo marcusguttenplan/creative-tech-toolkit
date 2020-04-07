@@ -1,0 +1,44 @@
+html {
+  display: flex;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.container {
+  width: 100%;
+  text-align: center;
+}
+
+#welcome {
+  display: flex;
+}
+
+.flip-card {
+    flex: 1;
+    display: flex;
+    width: 50%;
+    border: 3px solid #eee;
+    font-size: 50vw;
+    font-family: sans-serif;
+    color: #eee;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#player-1 {
+    background-color: #008efb;
+}
+
+#player-2 {
+    background-color: #ff4e4e;
+}

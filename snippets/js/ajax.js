@@ -7,7 +7,7 @@ function ajaxReq(method, url, options, callback) {
             // console.log('responseText:' + xhr.responseText);
             try {
                 var data = JSON.parse(xhr.responseText);
-            } catch(err) {
+            } catch (err) {
                 console.log(err.message + " in " + xhr.responseText);
                 return;
             }
@@ -21,6 +21,7 @@ function ajaxReq(method, url, options, callback) {
     xhr.send();
 }
 
+
 // Use a Promise to wait until Ajax request has finished
 new Promise(function(resolve, reject) {
     ajaxReq('GET', constUrl, options, function(data) {
@@ -30,12 +31,25 @@ new Promise(function(resolve, reject) {
     console.log(response);
 });
 
+// xhr json
+function loadJSON(url, callback) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', url, true);
+    xobj.onreadystatechange = function() {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
+
 
 // jquery
 $.ajax({
     url: "/server-url",
     type: 'GET',
-    success: function (data) {
+    success: function(data) {
         console.log("success");
         console.log(data);
     }
@@ -52,6 +66,20 @@ function requester(options, callback) {
         callback(body);
     });
 }
+
+async function requesterAsync(url, body) {
+    console.log("requester()");
+    return await request({
+        method: 'POST',
+        url: url,
+        body: body,
+        json: true
+    }).then(async function(data) {
+        console.log("then()", data);
+        return data;
+    })
+}
+
 // API Request Function
 function callApi(data, callback) {
     var options = {
