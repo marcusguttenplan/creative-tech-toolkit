@@ -1,0 +1,23 @@
+version: '3.6'
+
+services:
+  site1:
+    image: nginx
+    container_name: site.com
+    restart: always
+    volumes:
+      - "./:/usr/share/nginx/html"
+    environment:
+      # NGINX-PROXY ENVIRONMENT VARIABLES: UPDATE ME
+      - VIRTUAL_HOST=site.com
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=site.com
+      - LETSENCRYPT_EMAIL=site@site.com
+      # /END NGINX-PROXY ENVIRONMENT VARIABLES
+    expose:
+      - 80
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
