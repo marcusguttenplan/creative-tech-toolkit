@@ -5,7 +5,7 @@ utils=(
     moreutils
     findutils
     grep
-    gnu-sed --with-default-names
+    gnu-sed
     curl
     ngrep
     tree
@@ -25,7 +25,6 @@ dev=(
     bash
     git
     python
-    node
     ruby
     ruby-build
     rbenv
@@ -53,15 +52,13 @@ apps=(
     qlstephen
     quicklook-csv
     quicklook-json
-    betterzipql
     slack
     spectacle
     spotify
     the-unarchiver
-    virtualbox-extension-pack
-    vitualbox
+    # virtualbox-extension-pack
+    # vitualbox
     webpquicklook
-    wireshark
 )
 
 # Install xcode command line tools
@@ -82,14 +79,10 @@ ipv4" >> ~/.curlrc
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Change permissions for Brew to Yourself
-sudo chown -R `whoami` /usr/local
+sudo chown -R $(whoami) /usr/local
 
 # tap needed formulas
 # echo "tapping homebrew repos"
-brew tap homebrew/dupes
-brew tap homebrew/nginx
-brew tap homebrew/services
-brew tap homebrew/versions
 brew doctor
 
 # Install utils
@@ -115,8 +108,8 @@ cp utils/atom/toolbar.cson ~/.atom/toolbar.cson
 # git
 cp utils/git/.gitconfig.example ~/.gitconfig
 touch ~/.gitignore
-echo ".DS_Store" >> ~/.gitconfig
-echo "node_modules/" >> ~/.gitconfig
+echo ".DS_Store" >> ~/.gitignore
+echo "node_modules/" >> ~/.gitignore
 
 
 # node
@@ -128,8 +121,8 @@ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 source ~/.bash_profile
 curl -L https://get.rvm.io | bash -s stable --ruby
 rvm get stable
-rbenv install 2.4.4
-rbenv global 2.4.4
+rbenv install 2.6.5
+rbenv global 2.6.5
 rbenv rehash
 gem update --system
 gem install bundler
