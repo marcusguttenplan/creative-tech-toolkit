@@ -28,6 +28,7 @@ dev=(
     ruby
     ruby-build
     rbenv
+    nodenv
 )
 
 apps=(
@@ -64,6 +65,9 @@ apps=(
 # Install xcode command line tools
 xcode-select --install
 
+# Change catalina's default zsh shell to bash
+chsh -s /bin/bash
+
 # change curl's useragent
 echo -e "user-agent = "Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0"\n
 referer = ";auto"\n
@@ -79,7 +83,7 @@ ipv4" >> ~/.curlrc
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Change permissions for Brew to Yourself
-sudo chown -R $(whoami) /usr/local
+# sudo chown -R $(whoami) /usr/local
 
 # tap needed formulas
 # echo "tapping homebrew repos"
@@ -102,18 +106,20 @@ cp ./.bashrc ~/.bashrc && cp ./.bash_profile ~/.bash_profile
 source ~/.bash_profile
 
 # Atom
-apm install tool-bar git-plus flex-tool-bar atom-visual-studio-code-ui
+apm install tool-bar git-plus flex-tool-bar atom-visual-studio-code-ui package-sync
+cp utils/atom/packages.cson ~/.atom/packages.cson
 cp utils/atom/toolbar.cson ~/.atom/toolbar.cson
 
 # git
 cp utils/git/.gitconfig.example ~/.gitconfig
-touch ~/.gitignore
-echo ".DS_Store" >> ~/.gitignore
-echo "node_modules/" >> ~/.gitignore
-
+cp utils/git/.gitignore.example ~/.gitignore
 
 # node
-npm install -g http-server
+echo 'eval "$(nodenv init -)"' >> ~/.bash_profile
+source ~/.bash_profile
+nodenv install 12.13.0
+nodenv global 12.13.0
+nodenv rehash
 
 # ruby
 echo 'export PATH="$PATH:$HOME/.rvm/bin"' >> ~/.bash_profile
@@ -128,15 +134,18 @@ gem update --system
 gem install bundler
 rbenv rehash
 
-# python
-pip install --upgrade setuptools
-pip install --upgrade distribute
-pip install --upgrade pip
-pip install virtualenv
+# python (using homebrews)
+pip3 install --upgrade setuptools
+pip3 install --upgrade distribute
+pip3 install --upgrade pip
+pip3 install virtualenv
 
 
 
 # SYSTEMS
+
+# silence catalina shell warning
+echo "export BASH_SILENCE_DEPRECATION_WARNING=1" >> ~/.bash_profile
 
 # Save To Disk (not to iCloud) By Default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -192,26 +201,39 @@ sudo defaults write com.apple.screensaver askForPasswordDelay -int 0
 # disable "report crash" prompts
 sudo defaults write com.apple.CrashReporter DialogType none
 
-# packet filter firewall (pf)
-sudo cat <<EOT >> /etc/pf.conf
-# limit ssh to vpn subnet
-block in proto tcp from any to any port 22
-pass in proto tcp from 10.8.0.0/8 to any port 22
+## Open certain apps in light mode
+defaults write `osascript -e 'id of app "Finder"'` NSRequiresAquaSystemAppearance -bool yes
+defaults write `osascript -e 'id of app "Notes"'` NSRequiresAquaSystemAppearance -bool yes
+defaults write `osascript -e 'id of app "Chrome"'` NSRequiresAquaSystemAppearance -bool yes
+defaults write `osascript -e 'id of app "iChat"'` NSRequiresAquaSystemAppearance -bool yes
+defaults write `osascript -e 'id of app "System Preferences"'` NSRequiresAquaSystemAppearance -bool yes
 
-# limit afp to vpn subnet
-block in proto tcp from any to any port 548
-pass in proto tcp from 10.8.0.0/8 to any port 548
 
-# limit smb to vpn subnet
-block in proto tcp from any to any port 139
-pass in proto tcp from 10.8.0.0/8 to any port 139
-block in proto tcp from any to any port 445
-pass in proto tcp from 10.8.0.0/8 to any port 445
+## print true for all plists with light theme
+# for x in `ls ~/Library/Preferences/*.plist` ; do /usr/libexec/PlistBuddy -c 'print ":NSRequiresAquaSystemAppearance"' $x ; if true; then echo "!! $x" ; fi ; done
 
-# limit vnc to vpn subnet
-block in proto tcp from any to any port 5900
-pass in proto tcp from 10.8.0.0/8 to any port 5900
 
-EOT
-
-sudo pfctl -f /etc/pf.conf
+## TODO fix packet filter for Catalina
+# # packet filter firewall (pf)
+# sudo cat <<EOT >> /etc/pf.conf
+# # limit ssh to vpn subnet
+# block in proto tcp from any to any port 22
+# pass in proto tcp from 10.8.0.0/8 to any port 22
+#
+# # limit afp to vpn subnet
+# block in proto tcp from any to any port 548
+# pass in proto tcp from 10.8.0.0/8 to any port 548
+#
+# # limit smb to vpn subnet
+# block in proto tcp from any to any port 139
+# pass in proto tcp from 10.8.0.0/8 to any port 139
+# block in proto tcp from any to any port 445
+# pass in proto tcp from 10.8.0.0/8 to any port 445
+#
+# # limit vnc to vpn subnet
+# block in proto tcp from any to any port 5900
+# pass in proto tcp from 10.8.0.0/8 to any port 5900
+#
+# EOT
+#
+# sudo pfctl -f /etc/pf.conf

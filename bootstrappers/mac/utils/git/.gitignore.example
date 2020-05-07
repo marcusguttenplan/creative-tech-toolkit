@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+__pycache_
+*.pyc
+*Env/
+*env/
+*creds.json
+credentials.csv
+credentials*
