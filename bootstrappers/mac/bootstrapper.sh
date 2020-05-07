@@ -69,7 +69,7 @@ xcode-select --install
 chsh -s /bin/bash
 
 # change curl's useragent
-echo -e "user-agent = "Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0"\n
+echo -e 'user-agent = "Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0"\n
 referer = ";auto"\n
 connect-timeout = 10\n
 progress-bar\n
@@ -77,7 +77,7 @@ max-time = 90\n
 verbose\n
 show-error\n
 remote-time\n
-ipv4" >> ~/.curlrc
+ipv4' >> ~/.curlrc
 
 # Install Brew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
