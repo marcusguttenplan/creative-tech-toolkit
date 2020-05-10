@@ -118,6 +118,7 @@ cp utils/atom/toolbar.cson ~/.atom/toolbar.cson
 # git
 cp utils/git/.gitconfig.example ~/.gitconfig
 cp utils/git/.gitignore.example ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
 
 # node
 echo 'eval "$(nodenv init -)"' >> ~/.bash_profile
