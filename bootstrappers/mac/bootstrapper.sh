@@ -37,7 +37,6 @@ apps=(
     alfred
     appcleaner
     atom
-    bartender
     cyberduck
     docker
     dropbox
@@ -51,8 +50,10 @@ apps=(
     qlmarkdown
     qlprettypatch
     qlstephen
+    qlvideo
     quicklook-csv
     quicklook-json
+    quicklookase
     slack
     spectacle
     spotify
@@ -61,6 +62,7 @@ apps=(
     # vitualbox
     webpquicklook
 )
+
 
 # Install xcode command line tools
 xcode-select --install
@@ -95,6 +97,9 @@ brew install ${utils[@]}
 
 # Install apps to /Applications
 echo "installing apps"
+# fix quicklook
+xattr -r ~/Library/QuickLook
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
 brew cask install ${apps[@]}
 
 # Install apps to /Applications
