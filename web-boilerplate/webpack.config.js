@@ -95,6 +95,21 @@ module.exports = {
                 context: './src',
                 from: 'css/vendor/**',
                 toType: 'dir'
+            },
+            {
+                context: './src',
+                from: '**/*.xml',
+                toType: 'dir'
+            },
+            {
+                context: './src',
+                from: '**/*.yml',
+                toType: 'dir'
+            },
+            {
+                context: './src',
+                from: '**/*.txt',
+                toType: 'dir'
             }
         ]),
         // new HtmlWebpackPlugin({
