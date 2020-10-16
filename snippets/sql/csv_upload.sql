@@ -1,0 +1,1 @@
+LOAD DATA LOCAL INFILE '/var/www/default/NIN-test-registrant-accounts-10-8-2020.csv' INTO TABLE registrants FIELDS TERMINATED BY ',' IGNORE 1 LINES (track, password, first_name, last_name, email, @ignore);
