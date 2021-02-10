@@ -23,3 +23,7 @@ output "dynamo" {
 output "rds" {
     value = aws_rds_cluster.default.endpoint
 }
+
+output "cdn" {
+    value = aws_cloudfront_distribution.prod_distribution.domain_name
+}
