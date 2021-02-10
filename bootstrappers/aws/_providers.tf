@@ -1,5 +1,22 @@
+##
+##
+## Project init
+##
+##
+
+# Set provider
+# TODO export keys
 provider "aws" {
   region     = "us-west-2"
-  #access_key = "my-access-key"  # Set env var AWS_ACCESS_KEY_ID
-  #secret_key = "my-secret-key"  # Set env var AWS_SECRET_ACCESS_KEY
+  # export AWS_ACCESS_KEY_ID=
+  # export AWS_SECRET_ACCESS_KEY=
+}
+
+# Set backend
+terraform {
+    backend "s3" {
+        bucket = "sparks-tf-state"
+        key    = "terraform.tfstate"
+        region = "us-east-1"
+    }
 }
