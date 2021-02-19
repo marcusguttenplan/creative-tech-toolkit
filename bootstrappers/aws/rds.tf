@@ -13,6 +13,7 @@ resource "aws_rds_cluster" "default" {
   database_name        = replace("${local.project-prefix}-db", "-", "_")
   master_username      = var.database_username
   master_password      = var.database_password
+  storage_encrypted    = true
 
   backup_retention_period = 7
   preferred_backup_window = "02:00-04:00"
@@ -21,7 +22,7 @@ resource "aws_rds_cluster" "default" {
   copy_tags_to_snapshot   = true
   apply_immediately       = true
 
-  # tags = local.tags
+  tags = local.tags
 }
 
 # Create Databases in Cluster

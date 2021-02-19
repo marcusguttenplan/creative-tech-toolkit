@@ -140,8 +140,8 @@ resource "aws_instance" "vm" {
   instance_type               = var.instance
   subnet_id                   = aws_subnet.subnet[1].id # Link to vpc.tf
   associate_public_ip_address = true
-  key_name                    = aws_key_pair.keypair.key_name # Link to keys.tf
-  # iam_instance_profile        = aws_iam_instance_profile.profile.name        # link to iam.tf
+  key_name                    = aws_key_pair.keypair.key_name         # Link to keys.tf
+  iam_instance_profile        = aws_iam_instance_profile.profile.name # link to iam.tf
 
   # Attach Security Groups
   vpc_security_group_ids = [
@@ -159,11 +159,13 @@ resource "aws_instance" "vm" {
   provisioner "remote-exec" {
     inline = [
       "echo '${var.pubkeys}' >> ~/.ssh/authorized_keys",    # Add pubkeys
-      "curl -fsSL https://get.docker.com -o get-docker.sh", # Download Docker
-      "sudo sh get-docker.sh",                              # Install Docker
-      "sudo usermod -aG docker ec2-user",
-      "sudo curl -L 'https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)' -o /usr/local/bin/docker-compose", # Download Docker Compose
-      "sudo chmod +x /usr/local/bin/docker-compose",                                                                                                       # Install Docker Composer
+      "sudo yum install -y git amazon-cloudwatch-agent",    # Install deps
+      "sudo amazon-linux-extras install -y docker",
+      "sudo service docker start",
+      "sudo usermod -a -G docker ec2-user",
+      "sudo chkconfig docker on",
+      "sudo curl -L "https://github.com/docker/compose/releases/download/1.28.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose",
+      "sudo chmod +x /usr/local/bin/docker-compose"
     ]
 
     connection {
