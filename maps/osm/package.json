@@ -13,7 +13,7 @@
     "url": "git+https://github.com/marcusguttenplan/faceplate.git"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.27.10",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
