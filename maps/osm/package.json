@@ -45,7 +45,7 @@
     "run-sequence": "^1.2.0"
   },
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "fs": "0.0.1-security",
     "hoek": "^5.0.3",
     "http": "0.0.0",
